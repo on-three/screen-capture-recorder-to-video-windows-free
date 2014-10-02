@@ -1,29 +1,21 @@
 #define AppVer "0.12.8pre"
 
-#define AppName "Screen Capturer Recorder"
+#define AppName "capture-text-overlay"
 ; AppId === AppName by default BTW
 
 ; To use this, run it from within virtual ...
 
 [Run]
 Filename: {app}\vendor\vcredist_x86.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: Installing MSVC 2010 RunTime...
-Filename: {app}\vendor\vcredist_x64.exe; Parameters: "/passive /Q:a /c:""msiexec /qb /i vcredist.msi"" "; StatusMsg: Installing MSVC 2010 64 bit RunTime...; MinVersion: 0,6.0.6000; Check: IsWin64
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s screen-capture-recorder.dll
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s screen-capture-recorder-x64.dll; Check: IsWin64
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s vendor\virtual-audio\audio_sniffer.dll; MinVersion: 0,6.0.6000
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s vendor\virtual-audio\audio_sniffer-x64.dll; MinVersion: 0,6.0.6000; Check: IsWin64
+Filename: regsvr32; WorkingDir: {app}; Parameters: /s capture-text-overlay.dll
 
 ; TODO clear registry, prefs on uninstall?
 
 [UninstallRun]
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s /u screen-capture-recorder.dll
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s /u screen-capture-recorder-x64.dll; Check: IsWin64
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s /u vendor\virtual-audio\audio_sniffer.dll; MinVersion: 0,6.0.6000
-Filename: regsvr32; WorkingDir: {app}; Parameters: /s /u vendor\virtual-audio\audio_sniffer-x64.dll; MinVersion: 0,6.0.6000; Check: IsWin64
+Filename: regsvr32; WorkingDir: {app}; Parameters: /s /u capture-text-overlay.dll
 
 [Files]
-Source: source_code\Win32\Release\screen-capture-recorder.dll; DestDir: {app}
-Source: source_code\x64\releasex64\screen-capture-recorder-x64.dll; DestDir: {app}
+Source: source_code\Win32\Release\capture-text-overlay.dll; DestDir: {app}
 Source: README.TXT; DestDir: {app}; Flags: isreadme
 Source: ChangeLog.txt; DestDir: {app}
 ; includes vendor/ffmpeg et al
@@ -33,9 +25,6 @@ Source: vendor\vcredist_*.exe; DestDir: {app}\vendor
 ; ruby scripts read version from this
 Source: innosetup_installer_options.iss; DestDir: {app}\
 
-; include latest dll's from virtual audio capturer...
-Source: ..\source_code\Release\audio_sniffer.dll; DestDir: {app}\vendor\virtual-audio;
-Source: ..\source_code\x64\Release\audio_sniffer-x64.dll; DestDir: {app}\vendor\virtual-audio;
 
 [Setup]
 AppName={#AppName}
