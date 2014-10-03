@@ -4,6 +4,10 @@
 #include "PushGuids.h"
 #include "DibHelper.h"
 #include <wmsdkidl.h>
+//#include <gdiplus.h>
+#include <string>
+
+//using namespace GdiPlus; 
 
 
 #define MIN(a,b)  ((a) < (b) ? (a) : (b))  // danger! can evaluate "a" twice.
@@ -320,6 +324,21 @@ CPushPinDesktop::~CPushPinDesktop()
 	}
 }
 
+void OnPaint(HDC hdc)
+{
+   //Graphics    graphics(hdc);
+   //SolidBrush  brush(Color(255, 0, 0, 255));
+   //FontFamily  fontFamily(L"Times New Roman");
+   //Font        font(&fontFamily, 24, FontStyleRegular, UnitPixel);
+   //PointF      pointF(10.0f, 20.0f);
+   
+   //graphics.DrawString(L"Hello World!", -1, &font, pointF, &brush);
+	//std::wstring msg = L"Hello world...";
+	const wchar_t* msg = L"Hello #/jp/shows...";
+	TextOut(hdc,100,100, msg,wcslen(msg) );
+
+}
+
 void CPushPinDesktop::CopyScreenToDataBlock(HDC hScrDC, BYTE *pData, BITMAPINFO *pHeader, IMediaSample *pSample)
 {
     HDC         hMemDC;         // screen DC and memory DC
@@ -346,6 +365,8 @@ void CPushPinDesktop::CopyScreenToDataBlock(HDC hScrDC, BYTE *pData, BITMAPINFO 
     hOldBitmap = (HBITMAP) SelectObject(hMemDC, hRawBitmap);
 
 	doJustBitBltOrScaling(hMemDC, m_iCaptureConfigWidth, m_iCaptureConfigHeight, iFinalStretchWidth, iFinalStretchHeight, hScrDC, nX, nY);
+
+	OnPaint(hMemDC);
 
 	if(m_bCaptureMouse) 
 	  AddMouse(hMemDC, &m_rScreen, hScrDC, m_iHwndToTrack);
