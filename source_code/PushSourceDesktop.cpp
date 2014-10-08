@@ -341,10 +341,10 @@ void OnPaint(HDC hdc)
 	Pen      pen(Color(255, 0, 0, 255));
 	graphics.DrawLine(&pen, 0, 0, 200, 100);
 
-	LinearGradientBrush* myBrush = new LinearGradientBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
-	Font* myFont = new Font(L"Times new roman", 24);
-	RectF rect = RectF(100,100,200,200);
-	graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, myFont,rect,&StringFormat(0,0), myBrush);
+	LinearGradientBrush myBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
+	Font myFont(L"Times new roman", 24);
+	RectF rect = RectF(50,50,300,300);
+	graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, &myFont,rect,&StringFormat(0,0), &myBrush);
 	//const wchar_t* msg = L"Hello #/jp/shows...";
 	//TextOut(hdc,100,100, msg,wcslen(msg) );
 
