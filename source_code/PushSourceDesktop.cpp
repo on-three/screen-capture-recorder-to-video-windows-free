@@ -4,10 +4,14 @@
 #include "PushGuids.h"
 #include "DibHelper.h"
 #include <wmsdkidl.h>
-//#include <gdiplus.h>
 #include <string>
 
-//using namespace GdiPlus; 
+#include <Unknwn.h>
+#include <objidl.h>
+#include <windows.h>
+#include <gdiplus.h>
+using namespace Gdiplus;
+#pragma comment (lib,"Gdiplus.lib")
 
 
 #define MIN(a,b)  ((a) < (b) ? (a) : (b))  // danger! can evaluate "a" twice.
@@ -39,6 +43,10 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 {
 	// Get the device context of the main display, just to get some metrics for it...
 	globalStart = GetTickCount();
+
+	// Initialize GDI+
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+	Gdiplus::GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
 
 	m_iHwndToTrack = (HWND) read_config_setting(TEXT("hwnd_to_track"), NULL, false);
 	if(m_iHwndToTrack) {
@@ -322,20 +330,23 @@ CPushPinDesktop::~CPushPinDesktop()
 		free(pOldData);
 		pOldData = NULL;
 	}
+
+	Gdiplus::GdiplusShutdown(m_gdiplusToken);
 }
 
 void OnPaint(HDC hdc)
 {
-   //Graphics    graphics(hdc);
-   //SolidBrush  brush(Color(255, 0, 0, 255));
-   //FontFamily  fontFamily(L"Times New Roman");
-   //Font        font(&fontFamily, 24, FontStyleRegular, UnitPixel);
-   //PointF      pointF(10.0f, 20.0f);
    
-   //graphics.DrawString(L"Hello World!", -1, &font, pointF, &brush);
-	//std::wstring msg = L"Hello world...";
-	const wchar_t* msg = L"Hello #/jp/shows...";
-	TextOut(hdc,100,100, msg,wcslen(msg) );
+	Graphics graphics(hdc);
+	Pen      pen(Color(255, 0, 0, 255));
+	graphics.DrawLine(&pen, 0, 0, 200, 100);
+
+	LinearGradientBrush* myBrush = new LinearGradientBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
+	Font* myFont = new Font(L"Times new roman", 24);
+	RectF rect = RectF(100,100,200,200);
+	graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, myFont,rect,&StringFormat(0,0), myBrush);
+	//const wchar_t* msg = L"Hello #/jp/shows...";
+	//TextOut(hdc,100,100, msg,wcslen(msg) );
 
 }
 
