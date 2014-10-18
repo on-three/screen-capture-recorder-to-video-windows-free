@@ -1,0 +1,34 @@
+﻿Build started 10/15/2014 8:06:17 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib569.vcxproj" on node 7 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "lib569.dir\Debug\Test lib569.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/libtest/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\libtest\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D LIB569 /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"lib569.dir\Debug\\" /Fd"lib569.dir\Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\tests\libtest\lib569.c ..\..\..\tests\libtest\first.c
+         lib569.c
+         first.c
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"lib569.dir\Debug\lib569.exe.embed.manifest.res" lib569.dir\Debug\lib569_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Debug\lib569.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Debug\libcurl_imp.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"lib569.dir\Debug\lib569.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Debug/lib569.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Debug/lib569.lib" /MACHINE:X86 lib569.dir\Debug\lib569.exe.embed.manifest.res
+         lib569.dir\Debug\lib569.obj
+         lib569.dir\Debug\first.obj  /machine:X86 /debug 
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"lib569.dir\Debug\lib569.exe.embed.manifest" /manifest lib569.dir\Debug\lib569.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"lib569.dir\Debug\lib569.exe.embed.manifest.res" lib569.dir\Debug\lib569_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Debug\lib569.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Debug\libcurl_imp.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"lib569.dir\Debug\lib569.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Debug/lib569.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Debug/lib569.lib" /MACHINE:X86 lib569.dir\Debug\lib569.exe.embed.manifest.res
+         lib569.dir\Debug\lib569.obj
+         lib569.dir\Debug\first.obj  /machine:X86 /debug 
+         lib569.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Debug\lib569.exe
+       FinalizeBuildStatus:
+         Deleting file "lib569.dir\Debug\Test lib569.unsuccessfulbuild".
+         Touching "lib569.dir\Debug\Test lib569.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib569.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.18

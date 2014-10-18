@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{61a25d3f-932b-4c51-aeb3-14a455e57a43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DibHelper.cpp">
@@ -30,10 +33,19 @@
     <ClCompile Include="parent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="simpleserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stubserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="PushSource.def">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="spec.json">
+      <Filter>json</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="PushSource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractmystubserver.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

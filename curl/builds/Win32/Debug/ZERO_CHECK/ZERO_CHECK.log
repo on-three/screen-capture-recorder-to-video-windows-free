@@ -1,0 +1,23 @@
+﻿Build started 10/18/2014 9:47:24 AM.
+     1>Project "C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\ZERO_CHECK.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Win32\Debug\ZERO_CHECK\ZERO_CHECK.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Win32\Debug\ZERO_CHECK\ZERO_CHECK.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Checking Build System
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/lib/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/src/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/tests/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/tests/data/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/tests/libtest/CMakeFiles/generate.stamp is up-to-date.
+         CMake does not need to re-run because C:/cygwin/home/onthree/code/curl/builds/tests/server/CMakeFiles/generate.stamp is up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Win32\Debug\ZERO_CHECK\ZERO_CHECK.unsuccessfulbuild".
+         Touching "Win32\Debug\ZERO_CHECK\ZERO_CHECK.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\ZERO_CHECK.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07

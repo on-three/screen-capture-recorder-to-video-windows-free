@@ -1,0 +1,30 @@
+﻿Build started 10/15/2014 8:08:46 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib503.vcxproj" on node 5 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "lib503.dir\Release\Test lib503.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/libtest/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\libtest\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D LIB503 /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"lib503.dir\Release\\" /Fd"lib503.dir\Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\tests\libtest\lib503.c ..\..\..\tests\libtest\first.c ..\..\..\tests\libtest\testutil.c ..\..\..\lib\warnless.c
+         lib503.c
+         first.c
+         testutil.c
+         warnless.c
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib503.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Release\libcurl_imp.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"lib503.dir\Release\lib503.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Release/lib503.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Release/lib503.lib" /MACHINE:X86 lib503.dir\Release\lib503.obj
+         lib503.dir\Release\first.obj
+         lib503.dir\Release\testutil.obj
+         lib503.dir\Release\warnless.obj  /machine:X86 
+         lib503.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib503.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib503.exe;#1" /manifest lib503.dir\Release\lib503.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "lib503.dir\Release\Test lib503.unsuccessfulbuild".
+         Touching "lib503.dir\Release\Test lib503.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib503.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.19
