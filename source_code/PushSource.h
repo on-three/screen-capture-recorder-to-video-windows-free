@@ -5,8 +5,12 @@
 //
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 //------------------------------------------------------------------------------
-
+//#pragma once
 #include <strsafe.h>
+#include <string>
+
+//#include "stubserver.h"
+#include "MsgPresentationInterface.h"
 
 /*
 // UNITS = 10 ^ 7  
@@ -26,6 +30,7 @@ const REFERENCE_TIME FPS_1  = UNITS / 1;
 // Filter name strings
 #define g_wszPushDesktop    L"PushSource Desktop Filter"
 
+class MyStubServer;
 class CPushPinDesktop;
 
 // parent
@@ -65,12 +70,15 @@ public:
 
 
 // child
-class CPushPinDesktop : public CSourceStream, public IAMStreamConfig, public IKsPropertySet //CSourceStream is ... CBasePin
+class CPushPinDesktop : public MsgPresentationInterface, public CSourceStream, public IAMStreamConfig, public IKsPropertySet //CSourceStream is ... CBasePin
 {
 
 public:
     int m_iFrameNumber;
 
+public:
+	//std::wstring notify(const std::wstring& msg);
+	void process(const std::wstring& msg);
 protected:
 
     //int m_FramesWritten;				// To track where we are
@@ -95,6 +103,8 @@ protected:
 	HBITMAP     hRawBitmap;
 
 	ULONG_PTR m_gdiplusToken;
+	MyStubServer* m_jsonrpcServer;
+	std::wstring m_msg;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 
@@ -105,6 +115,7 @@ protected:
 	//int m_iScreenBitDepth;
 
 	float GetFps();
+	void OnPaint(HDC hdc);
 
 	boolean m_bReReadRegistry;
 	boolean m_bDeDupe;

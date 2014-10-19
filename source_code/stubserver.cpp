@@ -9,11 +9,15 @@
 #include <jsonrpc/rpc.h>
 #include <iostream>
 #include <jsonrpc/connectors/httpserver.h>
-#include "abstractmystubserver.h"
-
+#include "stubserver.h"
 using namespace jsonrpc;
 using namespace std;
 
+
+
+//class CPushPinDesktop;
+
+/*
 class MyStubServer : public AbstractMyStubServer
 {
     public:
@@ -23,9 +27,10 @@ class MyStubServer : public AbstractMyStubServer
         virtual std::string sayHello(const std::string& name);
         virtual int addNumbers(const int& param1, const int& param2);
 };
-
-MyStubServer::MyStubServer() :
-    AbstractMyStubServer(new HttpServer(8080))
+*/
+MyStubServer::MyStubServer(MsgPresentationInterface* captureDevice)
+	:AbstractMyStubServer(new HttpServer(8080))
+	,m_captureDevice(captureDevice)
 {
 }
 
@@ -36,7 +41,10 @@ void MyStubServer::notifyServer()
 
 string MyStubServer::sayHello(const string &name)
 {
-    return "Hello " + name;
+	std::wstring msg(name.begin(), name.end());
+	//m_captureDevice->notify(msg);
+	m_captureDevice->process(msg);
+	return "Hello " + name;
 }
 
 int MyStubServer::addNumbers(const int &param1, const int &param2)

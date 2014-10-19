@@ -33,9 +33,6 @@
     <ClCompile Include="parent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="simpleserver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="stubserver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,7 +55,13 @@
     <ClInclude Include="PushSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stubserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="abstractmystubserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgPresentationInterface.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

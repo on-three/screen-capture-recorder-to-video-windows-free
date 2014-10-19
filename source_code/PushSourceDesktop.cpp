@@ -13,6 +13,8 @@
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
+#include "stubserver.h"
+
 
 #define MIN(a,b)  ((a) < (b) ? (a) : (b))  // danger! can evaluate "a" twice.
 
@@ -27,6 +29,12 @@ long sumMillisTook = 0;
   int show_performance = 0;
 #endif
 
+void CPushPinDesktop::process(const std::wstring& msg)
+{
+	m_msg = msg;
+	//return std::wstring(TEXT("ROGER"));
+}
+
 // the default child constructor...
 CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
         : CSourceStream(NAME("Push Source CPushPinDesktop child/pin"), phr, pFilter, L"Capture"),
@@ -40,6 +48,8 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 		hRawBitmap(NULL),
 		m_bUseCaptureBlt(false),
 		previousFrameEndTime(0)
+		,m_msg(TEXT("Godspeed Ebola-chan"))
+		,m_jsonrpcServer(new MyStubServer(this))
 {
 	// Get the device context of the main display, just to get some metrics for it...
 	globalStart = GetTickCount();
@@ -47,6 +57,8 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 	// Initialize GDI+
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
 	Gdiplus::GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
+
+	m_jsonrpcServer->StartListening();
 
 	m_iHwndToTrack = (HWND) read_config_setting(TEXT("hwnd_to_track"), NULL, false);
 	if(m_iHwndToTrack) {
@@ -332,9 +344,11 @@ CPushPinDesktop::~CPushPinDesktop()
 	}
 
 	Gdiplus::GdiplusShutdown(m_gdiplusToken);
+	m_jsonrpcServer->StopListening();
+	delete m_jsonrpcServer;
 }
 
-void OnPaint(HDC hdc)
+void CPushPinDesktop::OnPaint(HDC hdc)
 {
    
 	Graphics graphics(hdc);
@@ -344,7 +358,8 @@ void OnPaint(HDC hdc)
 	LinearGradientBrush myBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
 	Font myFont(L"Times new roman", 24);
 	RectF rect = RectF(50,50,300,300);
-	graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, &myFont,rect,&StringFormat(0,0), &myBrush);
+	//graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, &myFont,rect,&StringFormat(0,0), &myBrush);
+	graphics.DrawString(m_msg.c_str(), -1, &myFont, rect, &StringFormat(0,0), &myBrush);
 	//const wchar_t* msg = L"Hello #/jp/shows...";
 	//TextOut(hdc,100,100, msg,wcslen(msg) );
 

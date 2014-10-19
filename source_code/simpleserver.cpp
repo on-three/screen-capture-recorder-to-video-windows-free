@@ -4,16 +4,16 @@
  * @author Peter Spiess-Knafl
  * @brief main.cpp
  */
-
+#include "simpleserver.h"
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include <jsonrpc/rpc.h>
-#include <connectors/httpserver.h>
+
 
 using namespace jsonrpc;
 using namespace std;
 
+/*
 class SampleServer : public AbstractServer<SampleServer>
 {
     public:
@@ -37,6 +37,28 @@ class SampleServer : public AbstractServer<SampleServer>
         }
 
 };
+*/
+SampleServer::SampleServer()
+    :AbstractServer<SampleServer>(new HttpServer(8080))
+	//, true, "ssl_cert.pem"))
+{
+    this->bindAndAddMethod(new Procedure("sayHello", PARAMS_BY_NAME, JSON_STRING, "name", JSON_STRING, NULL), &SampleServer::sayHello);
+    this->bindAndAddNotification(new Procedure("notifyServer", PARAMS_BY_NAME, NULL), &SampleServer::notifyServer);
+}
+
+        //methodssl_cert.pem
+void SampleServer::sayHello(const Json::Value& request, Json::Value& response)
+{
+    response = "Hello: " + request["name"].asString();
+}
+
+        //notification
+void SampleServer::notifyServer(const Json::Value& request)
+{
+    cout << "server received some Notification" << endl;
+}
+
+
 
 /*
 int main(int argc, char** argv)

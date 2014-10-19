@@ -110,7 +110,6 @@
     <ClCompile Include="PushSourceDesktop.cpp" />
     <ClCompile Include="PushSourceDesktopAccessories.cpp" />
     <ClCompile Include="setup.cpp" />
-    <ClCompile Include="simpleserver.cpp" />
     <ClCompile Include="stubserver.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -120,8 +119,10 @@
   <ItemGroup>
     <ClInclude Include="abstractmystubserver.h" />
     <ClInclude Include="DibHelper.h" />
+    <ClInclude Include="MsgPresentationInterface.h" />
     <ClInclude Include="PushGuids.h" />
     <ClInclude Include="PushSource.h" />
+    <ClInclude Include="stubserver.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PushSource.rc" />
