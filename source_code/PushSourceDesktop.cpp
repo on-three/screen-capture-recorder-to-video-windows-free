@@ -31,7 +31,7 @@ long sumMillisTook = 0;
 
 void CPushPinDesktop::process(const std::wstring& msg)
 {
-	m_msg = msg;
+	//m_text = S;
 	//return std::wstring(TEXT("ROGER"));
 }
 
@@ -40,7 +40,7 @@ std::string CPushPinDesktop::StaticMessage(const int& h,
 		const std::wstring& name, 
 		const int& w, const int& x, const int& y)
 {
-	m_msg = msg;
+	m_text = StaticText(msg, x, y, w, h);
 	return std::string("SUCCESS");
 }
 
@@ -57,7 +57,7 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 		hRawBitmap(NULL),
 		m_bUseCaptureBlt(false),
 		previousFrameEndTime(0)
-		,m_msg(TEXT("Godspeed Ebola-chan"))
+		//,m_text(std::wstring(TEXT("TESTING"),100,100,100,100))
 		,m_jsonrpcServer(new MyStubServer(this))
 {
 	// Get the device context of the main display, just to get some metrics for it...
@@ -361,14 +361,27 @@ void CPushPinDesktop::OnPaint(HDC hdc)
 {
    
 	Graphics graphics(hdc);
-	Pen      pen(Color(255, 0, 0, 255));
-	graphics.DrawLine(&pen, 0, 0, 200, 100);
+	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
+    graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);
+	//Pen      pen(Color(255, 0, 0, 255));
+	//graphics.DrawLine(&pen, 0, 0, 200, 100);
 
-	LinearGradientBrush myBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
-	Font myFont(L"Times new roman", 24);
-	RectF rect = RectF(50,50,300,300);
+	//SolidBrush myBrush(Color::Yellow);
+	//LinearGradientBrush myBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
+	//Font myFont(L"Arial", 36);
+	FontFamily fontFamily(L"Arial");
+	//RectF rect = RectF(50,50,300,300);
+	GraphicsPath path;
+	StringFormat strformat;
+    path.AddString(m_text.Text().c_str(), -1, &fontFamily, 
+	FontStyleRegular, 36, Gdiplus::Point(m_text.X(), m_text.Y()), &strformat );
+	Pen pen(Color::Black, 4);
+    graphics.DrawPath(&pen, &path);
+    SolidBrush brush(Color::Yellow);
+    graphics.FillPath(&brush, &path);
+
 	//graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, &myFont,rect,&StringFormat(0,0), &myBrush);
-	graphics.DrawString(m_msg.c_str(), -1, &myFont, rect, &StringFormat(0,0), &myBrush);
+	//graphics.DrawString(m_msg.c_str(), -1, &myFont, rect, &StringFormat(0,0), &myBrush);
 	//const wchar_t* msg = L"Hello #/jp/shows...";
 	//TextOut(hdc,100,100, msg,wcslen(msg) );
 

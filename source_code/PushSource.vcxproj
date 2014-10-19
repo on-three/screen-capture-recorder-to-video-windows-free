@@ -125,6 +125,7 @@
     <ClInclude Include="MsgPresentationInterface.h" />
     <ClInclude Include="PushGuids.h" />
     <ClInclude Include="PushSource.h" />
+    <ClInclude Include="StaticText.h" />
     <ClInclude Include="stubserver.h" />
   </ItemGroup>
   <ItemGroup>

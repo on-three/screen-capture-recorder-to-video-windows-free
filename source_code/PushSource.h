@@ -11,6 +11,7 @@
 
 //#include "stubserver.h"
 #include "MsgPresentationInterface.h"
+#include "StaticText.h"
 
 /*
 // UNITS = 10 ^ 7  
@@ -108,7 +109,7 @@ protected:
 
 	ULONG_PTR m_gdiplusToken;
 	MyStubServer* m_jsonrpcServer;
-	std::wstring m_msg;
+	StaticText m_text;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 
