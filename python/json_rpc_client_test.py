@@ -12,11 +12,16 @@ python test to make json rpc calls on video overlay pipeline.
 
 [
     {	//This is how you define a method with named parameters.
-        "method": "sayHello",
+        "method": "StaticMessage",
         "params": {
-            "name": "Peter"
+            "msg": "Hello.",
+			"name" : "1",
+			"x" : 0,
+			"y" : 0,
+			"w" : 100,
+			"h" : 100
         },
-        "returns": "Hello Peter"
+        "returns": "Success"
     }
 ]
   
@@ -43,7 +48,7 @@ def main():
   y = 2
   #friendly_name = args.message_name or 'test message'
   #response = http_client.call('ShowMessage', msg, x, y, friendly_name)
-  response = http_client.sayHello(name=msg)
+  response = http_client.StaticMessage(msg=msg, name="1", x=100, y=100, w=100, h=100)
 
   print('Response from server: {r}'.format(r=response))
     

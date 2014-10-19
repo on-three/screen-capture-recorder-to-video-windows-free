@@ -34,22 +34,17 @@ MyStubServer::MyStubServer(MsgPresentationInterface* captureDevice)
 {
 }
 
-void MyStubServer::notifyServer()
+std::string MyStubServer::StaticMessage(const int& h, 
+			const std::string& msg, 
+			const std::string& name, 
+			const int& w, const int& x, const int& y)
 {
-    cout << "Server got notified" << endl;
-}
-
-string MyStubServer::sayHello(const string &name)
-{
-	std::wstring msg(name.begin(), name.end());
-	//m_captureDevice->notify(msg);
-	m_captureDevice->process(msg);
-	return "Hello " + name;
-}
-
-int MyStubServer::addNumbers(const int &param1, const int &param2)
-{
-    return param1 + param2;
+	std::wstring message(msg.begin(), msg.end());
+	std::wstring freindlyName(name.begin(), name.end());
+	m_captureDevice->StaticMessage(h, 
+		message, freindlyName, 
+		w, x, y);
+	return std::string("success");
 }
 
 /*

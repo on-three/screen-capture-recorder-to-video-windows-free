@@ -14,6 +14,10 @@ class MsgPresentationInterface
 {
 public:
 	virtual void process(const std::wstring& msg) = 0;
+	virtual std::string StaticMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y) = 0;
 };
 
 #endif

@@ -13,31 +13,17 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         AbstractMyStubServer(jsonrpc::AbstractServerConnector* conn) :
             jsonrpc::AbstractServer<AbstractMyStubServer>(conn) 
         {
-            this->bindAndAddMethod(new jsonrpc::Procedure("addNumbers", jsonrpc::PARAMS_BY_POSITION, jsonrpc::JSON_INTEGER, "param1",jsonrpc::JSON_INTEGER,"param2",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::addNumbersI);
-            this->bindAndAddNotification(new jsonrpc::Procedure("notifyServer", jsonrpc::PARAMS_BY_NAME,  NULL), &AbstractMyStubServer::notifyServerI);
-            this->bindAndAddMethod(new jsonrpc::Procedure("sayHello", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::sayHelloI);
+            this->bindAndAddMethod(new jsonrpc::Procedure("StaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "h",jsonrpc::JSON_INTEGER,"msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"w",jsonrpc::JSON_INTEGER,"x",jsonrpc::JSON_INTEGER,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::StaticMessageI);
 
         }
         
-        inline virtual void addNumbersI(const Json::Value& request, Json::Value& response) 
+        inline virtual void StaticMessageI(const Json::Value& request, Json::Value& response) 
         {
-            response = this->addNumbers(request[0u].asInt(), request[1u].asInt());
-        }
-
-        inline virtual void notifyServerI(const Json::Value& request) 
-        {
-            this->notifyServer();
-        }
-
-        inline virtual void sayHelloI(const Json::Value& request, Json::Value& response) 
-        {
-            response = this->sayHello(request["name"].asString());
+            response = this->StaticMessage(request["h"].asInt(), request["msg"].asString(), request["name"].asString(), request["w"].asInt(), request["x"].asInt(), request["y"].asInt());
         }
 
 
-        virtual int addNumbers(const int& param1, const int& param2) = 0;
-        virtual void notifyServer() = 0;
-        virtual std::string sayHello(const std::string& name) = 0;
+        virtual std::string StaticMessage(const int& h, const std::string& msg, const std::string& name, const int& w, const int& x, const int& y) = 0;
 
 };
 #endif //_ABSTRACTMYSTUBSERVER_H_

@@ -35,6 +35,15 @@ void CPushPinDesktop::process(const std::wstring& msg)
 	//return std::wstring(TEXT("ROGER"));
 }
 
+std::string CPushPinDesktop::StaticMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y)
+{
+	m_msg = msg;
+	return std::string("SUCCESS");
+}
+
 // the default child constructor...
 CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
         : CSourceStream(NAME("Push Source CPushPinDesktop child/pin"), phr, pFilter, L"Capture"),

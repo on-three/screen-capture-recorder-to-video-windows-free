@@ -19,9 +19,10 @@ class MyStubServer : public AbstractMyStubServer
     public:
         MyStubServer(MsgPresentationInterface* captureDevice);
 
-        virtual void notifyServer();
-        virtual std::string sayHello(const std::string& name);
-        virtual int addNumbers(const int& param1, const int& param2);
+        virtual std::string StaticMessage(const int& h, 
+			const std::string& msg, 
+			const std::string& name, 
+			const int& w, const int& x, const int& y);
 private:
 	MsgPresentationInterface* const m_captureDevice;
 

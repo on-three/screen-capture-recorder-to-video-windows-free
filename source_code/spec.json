@@ -1,21 +1,14 @@
 [
     {	//This is how you define a method with named parameters.
-        "method": "sayHello",
+        "method": "StaticMessage",
         "params": {
-            "name": "Peter"
+            "msg": "Hello.",
+			"name" : "1",
+			"x" : 0,
+			"y" : 0,
+			"w" : 100,
+			"h" : 100
         },
-        "returns": "Hello Peter"
-    },
-    {	//This is how you define a notification which does not take any parameters.
-        "notification": "notifyServer",
-        "params": null
-    },
-    {	//This is how you define a method with positional parameters.
-        "method": "addNumbers",
-        "params": [
-            3,
-            4
-        ],
-        "returns": 7
+        "returns": "Success"
     }
 ]

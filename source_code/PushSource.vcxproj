@@ -103,6 +103,9 @@
     <PostBuildEvent>
       <Command>regsvr32  /s $(OutDir)/capture-text-overlay.dll</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>..\libjson-rpc-cpp\build\out\Release\jsonrpcstub.exe -s spec.json MyStub</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DibHelper.cpp" />

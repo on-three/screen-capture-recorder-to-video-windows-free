@@ -79,6 +79,10 @@ public:
 public:
 	//std::wstring notify(const std::wstring& msg);
 	void process(const std::wstring& msg);
+	std::string StaticMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y);
 protected:
 
     //int m_FramesWritten;				// To track where we are
