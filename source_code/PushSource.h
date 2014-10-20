@@ -83,7 +83,8 @@ public:
 	std::string StaticMessage(const int& h, 
 		const std::wstring& msg, 
 		const std::wstring& name, 
-		const int& w, const int& x, const int& y);
+		const int& w, const int& x, const int& y, const float lifetime);
+	std::string RemoveStaticMessage(const std::wstring& name);
 protected:
 
     //int m_FramesWritten;				// To track where we are

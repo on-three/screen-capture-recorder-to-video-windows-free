@@ -38,9 +38,14 @@ void CPushPinDesktop::process(const std::wstring& msg)
 std::string CPushPinDesktop::StaticMessage(const int& h, 
 		const std::wstring& msg, 
 		const std::wstring& name, 
-		const int& w, const int& x, const int& y)
+		const int& w, const int& x, const int& y, const float lifetime)
 {
-	m_staticText.AddMessage(msg, name, x, y, w, h, 0.0f);//TODO: add lifetime.
+	m_staticText.AddMessage(msg, name, x, y, w, h, lifetime);
+	return std::string("SUCCESS");
+}
+
+std::string CPushPinDesktop::RemoveStaticMessage(const std::wstring& name) {
+	m_staticText.RemoveMessage(name);
 	return std::string("SUCCESS");
 }
 
@@ -359,7 +364,7 @@ CPushPinDesktop::~CPushPinDesktop()
 
 void CPushPinDesktop::OnPaint(HDC hdc)
 {
-	m_staticText.Update(0.0f, 848, 480);
+	m_staticText.Update(0.033f, 848, 480);
 	m_staticText.Render(hdc);
 }
 

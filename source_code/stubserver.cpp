@@ -34,7 +34,13 @@ MyStubServer::MyStubServer(MsgPresentationInterface* captureDevice)
 {
 }
 
+std::string MyStubServer::RemoveStaticMessage(const std::string& name)
+{
+	std::wstring freindlyName(name.begin(), name.end());
+	return m_captureDevice->RemoveStaticMessage(freindlyName);
+}
 std::string MyStubServer::StaticMessage(const int& h, 
+			const double& lifetime, 
 			const std::string& msg, 
 			const std::string& name, 
 			const int& w, const int& x, const int& y)
@@ -43,7 +49,7 @@ std::string MyStubServer::StaticMessage(const int& h,
 	std::wstring freindlyName(name.begin(), name.end());
 	m_captureDevice->StaticMessage(h, 
 		message, freindlyName, 
-		w, x, y);
+		w, x, y, static_cast<float>(lifetime));
 	return std::string("success");
 }
 

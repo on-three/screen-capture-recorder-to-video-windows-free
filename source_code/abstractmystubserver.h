@@ -13,17 +13,24 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         AbstractMyStubServer(jsonrpc::AbstractServerConnector* conn) :
             jsonrpc::AbstractServer<AbstractMyStubServer>(conn) 
         {
-            this->bindAndAddMethod(new jsonrpc::Procedure("StaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "h",jsonrpc::JSON_INTEGER,"msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"w",jsonrpc::JSON_INTEGER,"x",jsonrpc::JSON_INTEGER,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::StaticMessageI);
+            this->bindAndAddMethod(new jsonrpc::Procedure("RemoveStaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveStaticMessageI);
+            this->bindAndAddMethod(new jsonrpc::Procedure("StaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "h",jsonrpc::JSON_INTEGER,"lifetime",jsonrpc::JSON_REAL,"msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"w",jsonrpc::JSON_INTEGER,"x",jsonrpc::JSON_INTEGER,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::StaticMessageI);
 
         }
         
+        inline virtual void RemoveStaticMessageI(const Json::Value& request, Json::Value& response) 
+        {
+            response = this->RemoveStaticMessage(request["name"].asString());
+        }
+
         inline virtual void StaticMessageI(const Json::Value& request, Json::Value& response) 
         {
-            response = this->StaticMessage(request["h"].asInt(), request["msg"].asString(), request["name"].asString(), request["w"].asInt(), request["x"].asInt(), request["y"].asInt());
+            response = this->StaticMessage(request["h"].asInt(), request["lifetime"].asDouble(), request["msg"].asString(), request["name"].asString(), request["w"].asInt(), request["x"].asInt(), request["y"].asInt());
         }
 
 
-        virtual std::string StaticMessage(const int& h, const std::string& msg, const std::string& name, const int& w, const int& x, const int& y) = 0;
+        virtual std::string RemoveStaticMessage(const std::string& name) = 0;
+        virtual std::string StaticMessage(const int& h, const double& lifetime, const std::string& msg, const std::string& name, const int& w, const int& x, const int& y) = 0;
 
 };
 #endif //_ABSTRACTMYSTUBSERVER_H_

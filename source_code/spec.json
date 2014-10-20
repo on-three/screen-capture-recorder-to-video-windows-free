@@ -1,5 +1,5 @@
 [
-    {	//This is how you define a method with named parameters.
+    {
         "method": "StaticMessage",
         "params": {
             "msg": "Hello.",
@@ -7,7 +7,15 @@
 			"x" : 0,
 			"y" : 0,
 			"w" : 100,
-			"h" : 100
+			"h" : 100,
+			"lifetime" : 0.0
+        },
+        "returns": "Success"
+    },
+	{
+        "method": "RemoveStaticMessage",
+        "params": {
+            "name" : "1"
         },
         "returns": "Success"
     }

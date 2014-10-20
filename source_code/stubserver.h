@@ -19,7 +19,9 @@ class MyStubServer : public AbstractMyStubServer
     public:
         MyStubServer(MsgPresentationInterface* captureDevice);
 
+        virtual std::string RemoveStaticMessage(const std::string& name);
         virtual std::string StaticMessage(const int& h, 
+			const double& lifetime, 
 			const std::string& msg, 
 			const std::string& name, 
 			const int& w, const int& x, const int& y);

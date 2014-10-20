@@ -121,5 +121,5 @@ void StaticText::Render(HDC hdc) {
 }
 bool StaticText::Update(const float dt, const int screen_w, const int screen_h) {
 	m_cumulativeTime+=dt;
-	return m_lifetime==0.0f ? false : dt >= m_lifetime;
+	return m_lifetime<=0.0f ? false : m_cumulativeTime >= m_lifetime;
 }

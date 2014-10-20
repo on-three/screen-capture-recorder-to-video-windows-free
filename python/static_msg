@@ -36,6 +36,7 @@ def main():
   parser.add_argument('-x', help='x pos of message on screen in pixels', type=int, default=100)
   parser.add_argument('-y', help='y pos of message on screen in pixels', type=int, default=100)
   parser.add_argument('-n', '--name', help='Friendly name to remove/change this message later.', type=str, default='1')
+  parser.add_argument('-l', '--lifetime', help='Lifetime in seconds of message. Zero is forever.', type=float, default=0.0)
   args = parser.parse_args()
 
   http_client = pyjsonrpc.HttpClient(
@@ -48,8 +49,9 @@ def main():
   x = args.x
   y = args.y
   name = args.name
+  lifetime = args.lifetime
   #response = http_client.call('ShowMessage', msg, x, y, friendly_name)
-  response = http_client.StaticMessage(msg=msg, name=name, x=x, y=y, w=100, h=100)
+  response = http_client.StaticMessage(msg=msg, name=name, x=x, y=y, w=100, h=100, lifetime=lifetime)
 
   print('Response from server: {r}'.format(r=response))
   
