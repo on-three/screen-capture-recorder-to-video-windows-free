@@ -32,11 +32,14 @@ import argparse
 
 def main():
   parser = argparse.ArgumentParser(description='JSON RPC calls on gstreamer pipeline test.')
-  parser.add_argument('message', help='Test to display on video stream', type=str)
+  parser.add_argument('message', help='Test to display on video stream', type=str, nargs='?', default=None)
   parser.add_argument('-x', help='x pos of message on screen in pixels', type=int, default=100)
   parser.add_argument('-y', help='y pos of message on screen in pixels', type=int, default=100)
+  parser.add_argument('--width', help='width of text box on screen in pixels', type=int, default=100)
+  parser.add_argument('--height', help='height of text box on screen in pixels', type=int, default=100)
   parser.add_argument('-n', '--name', help='Friendly name to remove/change this message later.', type=str, default='1')
   parser.add_argument('-l', '--lifetime', help='Lifetime in seconds of message. Zero is forever.', type=float, default=0.0)
+  parser.add_argument('-r', '--remove', help='Remove message specified by -n (name) parameter', action='store_true')
   args = parser.parse_args()
 
   http_client = pyjsonrpc.HttpClient(
@@ -48,10 +51,15 @@ def main():
   msg = args.message
   x = args.x
   y = args.y
+  w = args.width
+  h = args.height
   name = args.name
   lifetime = args.lifetime
-  #response = http_client.call('ShowMessage', msg, x, y, friendly_name)
-  response = http_client.StaticMessage(msg=msg, name=name, x=x, y=y, w=100, h=100, lifetime=lifetime)
+  response = ''
+  if args.remove:
+    response = http_client.RemoveStaticMessage(name=name)
+  elif msg:
+    response = http_client.StaticMessage(msg=msg, name=name, x=x, y=y, w=100, h=100, lifetime=lifetime)
 
   print('Response from server: {r}'.format(r=response))
   
