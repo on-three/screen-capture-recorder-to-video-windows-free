@@ -109,7 +109,7 @@ protected:
 
 	ULONG_PTR m_gdiplusToken;
 	MyStubServer* m_jsonrpcServer;
-	StaticText m_text;
+	StaticTextManager m_staticText;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 

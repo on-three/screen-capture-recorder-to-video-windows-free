@@ -40,7 +40,7 @@ std::string CPushPinDesktop::StaticMessage(const int& h,
 		const std::wstring& name, 
 		const int& w, const int& x, const int& y)
 {
-	m_text = StaticText(msg, x, y, w, h);
+	m_staticText.AddMessage(msg, name, x, y, w, h, 0.0f);//TODO: add lifetime.
 	return std::string("SUCCESS");
 }
 
@@ -359,32 +359,8 @@ CPushPinDesktop::~CPushPinDesktop()
 
 void CPushPinDesktop::OnPaint(HDC hdc)
 {
-   
-	Graphics graphics(hdc);
-	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
-    graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);
-	//Pen      pen(Color(255, 0, 0, 255));
-	//graphics.DrawLine(&pen, 0, 0, 200, 100);
-
-	//SolidBrush myBrush(Color::Yellow);
-	//LinearGradientBrush myBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
-	//Font myFont(L"Arial", 36);
-	FontFamily fontFamily(L"Arial");
-	//RectF rect = RectF(50,50,300,300);
-	GraphicsPath path;
-	StringFormat strformat;
-    path.AddString(m_text.Text().c_str(), -1, &fontFamily, 
-	FontStyleRegular, 36, Gdiplus::Point(m_text.X(), m_text.Y()), &strformat );
-	Pen pen(Color::Black, 4);
-    graphics.DrawPath(&pen, &path);
-    SolidBrush brush(Color::Yellow);
-    graphics.FillPath(&brush, &path);
-
-	//graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, &myFont,rect,&StringFormat(0,0), &myBrush);
-	//graphics.DrawString(m_msg.c_str(), -1, &myFont, rect, &StringFormat(0,0), &myBrush);
-	//const wchar_t* msg = L"Hello #/jp/shows...";
-	//TextOut(hdc,100,100, msg,wcslen(msg) );
-
+	m_staticText.Update(0.0f, 848, 480);
+	m_staticText.Render(hdc);
 }
 
 void CPushPinDesktop::CopyScreenToDataBlock(HDC hScrDC, BYTE *pData, BITMAPINFO *pHeader, IMediaSample *pSample)

@@ -16,6 +16,12 @@
     <Filter Include="json">
       <UniqueIdentifier>{61a25d3f-932b-4c51-aeb3-14a455e57a43}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Overlay">
+      <UniqueIdentifier>{3971d2b6-960f-44d0-88c7-710857b7417a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Overlay">
+      <UniqueIdentifier>{2440de99-4d17-4e0e-a583-6289c09926fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DibHelper.cpp">
@@ -35,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="stubserver.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticText.cpp">
+      <Filter>Source Files\Overlay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,7 +74,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StaticText.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Overlay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
