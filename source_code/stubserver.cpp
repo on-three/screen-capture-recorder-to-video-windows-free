@@ -47,10 +47,29 @@ std::string MyStubServer::StaticMessage(const int& h,
 {
 	std::wstring message(msg.begin(), msg.end());
 	std::wstring freindlyName(name.begin(), name.end());
-	m_captureDevice->StaticMessage(h, 
+	return m_captureDevice->StaticMessage(h, 
 		message, freindlyName, 
 		w, x, y, static_cast<float>(lifetime));
-	return std::string("success");
+	//return std::string("success");
+}
+
+std::string MyStubServer::RemoveScrollingMessage(const std::string& name)
+{
+	std::wstring freindlyName(name.begin(), name.end());
+	return m_captureDevice->RemoveScrollingMessage(freindlyName);
+}
+std::string MyStubServer::ScrollingMessage(const int& h, 
+			const double& lifetime, 
+			const std::string& msg, 
+			const std::string& name, 
+			const int& w, const int& x, const int& y)
+{
+	std::wstring message(msg.begin(), msg.end());
+	std::wstring freindlyName(name.begin(), name.end());
+	return m_captureDevice->ScrollingMessage(h, 
+		message, freindlyName, 
+		w, x, y, static_cast<float>(lifetime));
+	//return std::string("success");
 }
 
 /*

@@ -18,5 +18,26 @@
             "name" : "1"
         },
         "returns": "Success"
+    },
+	{
+        "method": "ScrollingMessage",
+        "params": {
+            "msg": "Hello.",
+			"name" : "1",
+			"x" : 0,
+			"y" : 0,
+			"w" : 100,
+			"h" : 100,
+			"lifetime" : 0.0
+        },
+        "returns": "Success"
+    },
+	{
+        "method": "RemoveScrollingMessage",
+        "params": {
+            "name" : "1"
+        },
+        "returns": "Success"
     }
+
 ]

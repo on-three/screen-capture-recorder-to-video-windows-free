@@ -19,6 +19,12 @@ public:
 		const std::wstring& name, 
 		const int& w, const int& x, const int& y,
 		const float lifetime) = 0;
+	virtual std::string RemoveScrollingMessage(const std::wstring& name) = 0;
+	virtual std::string ScrollingMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y,
+		const float lifetime) = 0;
 	virtual std::string RemoveStaticMessage(const std::wstring& name) = 0;
 };
 

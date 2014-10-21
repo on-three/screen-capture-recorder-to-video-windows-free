@@ -49,6 +49,21 @@ std::string CPushPinDesktop::RemoveStaticMessage(const std::wstring& name) {
 	return std::string("SUCCESS");
 }
 
+std::string CPushPinDesktop::RemoveScrollingMessage(const std::wstring& name)
+{
+	m_scrollingText.RemoveMessage(name);
+	return std::string("SUCCESS");
+}
+std::string CPushPinDesktop::ScrollingMessage(const int& h, 
+	const std::wstring& msg, 
+	const std::wstring& name, 
+	const int& w, const int& x, const int& y,
+	const float lifetime)
+{
+	m_scrollingText.AddMessage(msg, name, x, y, w, h, lifetime);
+	return std::string("SUCCESS");
+}
+
 // the default child constructor...
 CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
         : CSourceStream(NAME("Push Source CPushPinDesktop child/pin"), phr, pFilter, L"Capture"),
@@ -366,6 +381,8 @@ void CPushPinDesktop::OnPaint(HDC hdc)
 {
 	m_staticText.Update(0.033f, 848, 480);
 	m_staticText.Render(hdc);
+	m_scrollingText.Update(0.033f, 848, 480);
+	m_scrollingText.Render(hdc);
 }
 
 void CPushPinDesktop::CopyScreenToDataBlock(HDC hScrDC, BYTE *pData, BITMAPINFO *pHeader, IMediaSample *pSample)

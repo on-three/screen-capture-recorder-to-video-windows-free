@@ -12,6 +12,7 @@
 //#include "stubserver.h"
 #include "MsgPresentationInterface.h"
 #include "StaticText.h"
+#include "ScrollingText.h"
 
 /*
 // UNITS = 10 ^ 7  
@@ -85,6 +86,13 @@ public:
 		const std::wstring& name, 
 		const int& w, const int& x, const int& y, const float lifetime);
 	std::string RemoveStaticMessage(const std::wstring& name);
+
+	std::string RemoveScrollingMessage(const std::wstring& name);
+	std::string ScrollingMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y,
+		const float lifetime);
 protected:
 
     //int m_FramesWritten;				// To track where we are
@@ -111,6 +119,7 @@ protected:
 	ULONG_PTR m_gdiplusToken;
 	MyStubServer* m_jsonrpcServer;
 	StaticTextManager m_staticText;
+	ScrollingTextManager m_scrollingText;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 

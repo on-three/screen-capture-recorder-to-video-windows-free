@@ -112,6 +112,7 @@
     <ClCompile Include="parent.cpp" />
     <ClCompile Include="PushSourceDesktop.cpp" />
     <ClCompile Include="PushSourceDesktopAccessories.cpp" />
+    <ClCompile Include="ScrollingText.cpp" />
     <ClCompile Include="setup.cpp" />
     <ClCompile Include="StaticText.cpp" />
     <ClCompile Include="stubserver.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="MsgPresentationInterface.h" />
     <ClInclude Include="PushGuids.h" />
     <ClInclude Include="PushSource.h" />
+    <ClInclude Include="ScrollingText.h" />
     <ClInclude Include="StaticText.h" />
     <ClInclude Include="stubserver.h" />
   </ItemGroup>

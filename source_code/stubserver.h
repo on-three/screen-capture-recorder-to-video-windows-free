@@ -25,6 +25,12 @@ class MyStubServer : public AbstractMyStubServer
 			const std::string& msg, 
 			const std::string& name, 
 			const int& w, const int& x, const int& y);
+		virtual std::string RemoveScrollingMessage(const std::string& name);
+        virtual std::string ScrollingMessage(const int& h, 
+			const double& lifetime, 
+			const std::string& msg, 
+			const std::string& name, 
+			const int& w, const int& x, const int& y);
 private:
 	MsgPresentationInterface* const m_captureDevice;
 
