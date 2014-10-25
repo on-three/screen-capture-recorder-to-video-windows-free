@@ -27,7 +27,9 @@ public:
 	int X(void)const{return m_x;};
 	int Y(void)const{return m_y;};
 	int W(void)const{return m_w;};
+	void W(const int w){m_w=w;};
 	int H(void)const{return m_h;};
+	void H(const int h){m_h=h;};
 	float Lifetime(void)const{return m_lifetime;};
 
 	void Render(HDC hdc);

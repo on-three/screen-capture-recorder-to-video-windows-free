@@ -379,9 +379,11 @@ CPushPinDesktop::~CPushPinDesktop()
 
 void CPushPinDesktop::OnPaint(HDC hdc)
 {
-	m_staticText.Update(0.033f, 848, 480);
+	int width = GetDeviceCaps(hdc, HORZRES);
+	int height = GetDeviceCaps(hdc,VERTRES);
+	m_staticText.Update(0.033f, width, height);
 	m_staticText.Render(hdc);
-	m_scrollingText.Update(0.033f, 848, 480);
+	m_scrollingText.Update(0.033f, width, height);
 	m_scrollingText.Render(hdc);
 }
 

@@ -63,11 +63,26 @@ void ScrollingTextManager::Render(HDC hdc)
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
     graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);
 	FontFamily fontFamily(L"Arial");
+	Font font(&fontFamily,
+		36,
+		FontStyle::FontStyleRegular,
+		Gdiplus::UnitPixel);
 	GraphicsPath path;
 	StringFormat strformat;
+	
 	for(std::map<std::wstring, ScrollingText*>::iterator i = m_text.begin();
 		i!=m_text.end(); ++i)
 	{
+		Gdiplus::RectF origin(0,0,848.0, 480.0);
+		if(i->second->W()<0 || i->second->H()<0) {
+			Gdiplus::RectF bb;
+			//graphics.MeasureString(i->second->Text().c_str(), -1, &font, origin,&strformat, &bb);
+			//(const WCHAR *,INT,const Gdiplus::Font *,const Gdiplus::RectF &,Gdiplus::RectF *
+			//graphics.MeasureString(i->second->Text().c_str(), -1, &font, origin, &bb);
+			graphics.MeasureString(i->second->Text().c_str(), -1, &font, origin, &bb);
+			i->second->W(static_cast<int>(bb.Width));
+			i->second->H(static_cast<int>(bb.Height));
+		}
 		path.AddString(i->second->Text().c_str(), -1, &fontFamily, 
 		FontStyleRegular, 36, Gdiplus::Point(i->second->X(), i->second->Y()), &strformat );
 	}
@@ -94,8 +109,8 @@ ScrollingText::ScrollingText()
 	:m_text(std::wstring(TEXT("TESTING")))
 	,m_x(100)
 	,m_y(100)
-	,m_w(100)
-	,m_h(100)
+	,m_w(-1)
+	,m_h(-1)
 	,m_lifetime(0.0f)
 	,m_cumulativeTime(0.0f)
 	,m_cycletime(6.0f)
@@ -110,8 +125,8 @@ ScrollingText::ScrollingText(const std::wstring& text,
 		:m_text(text)
 		,m_x(x)
 		,m_y(y)
-		,m_w(w)
-		,m_h(h)
+		,m_w(-1)
+		,m_h(-1)
 		,m_lifetime(lifetime)
 		,m_cumulativeTime(0.0f)
 		,m_cycletime(6.0f)
