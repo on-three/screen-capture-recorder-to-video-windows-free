@@ -33,6 +33,7 @@ import argparse
 def main():
   parser = argparse.ArgumentParser(description='JSON RPC calls on gstreamer pipeline test.')
   parser.add_argument('message', help='Test to display on video stream', type=str, nargs='?', default=None)
+  parser.add_argument('--hostname', help='server hostname in form "http://hostname:port"', default='http://localhost:8080')
   parser.add_argument('-x', help='x pos of message on screen in pixels', type=int, default=100)
   parser.add_argument('-y', help='y pos of message on screen in pixels', type=int, default=100)
   parser.add_argument('--width', help='width of text box on screen in pixels', type=int, default=100)
@@ -43,7 +44,7 @@ def main():
   args = parser.parse_args()
 
   http_client = pyjsonrpc.HttpClient(
-    url = 'http://localhost:8080',
+    url = args.hostname, #'http://localhost:8080',
     #username = 'Username',
     #password = 'Password',
   )
