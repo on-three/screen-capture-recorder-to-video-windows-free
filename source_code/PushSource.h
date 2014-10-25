@@ -8,6 +8,7 @@
 //#pragma once
 #include <strsafe.h>
 #include <string>
+#include <time.h>
 
 //#include "stubserver.h"
 #include "MsgPresentationInterface.h"
@@ -117,6 +118,7 @@ protected:
 	HBITMAP     hRawBitmap;
 
 	ULONG_PTR m_gdiplusToken;
+	clock_t tPrev;
 	MyStubServer* m_jsonrpcServer;
 	StaticTextManager m_staticText;
 	ScrollingTextManager m_scrollingText;

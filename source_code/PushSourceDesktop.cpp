@@ -79,6 +79,7 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 		previousFrameEndTime(0)
 		//,m_text(std::wstring(TEXT("TESTING"),100,100,100,100))
 		,m_jsonrpcServer(new MyStubServer(this))
+		,tPrev(0)
 {
 	// Get the device context of the main display, just to get some metrics for it...
 	globalStart = GetTickCount();
@@ -379,11 +380,15 @@ CPushPinDesktop::~CPushPinDesktop()
 
 void CPushPinDesktop::OnPaint(HDC hdc)
 {
+	const clock_t now = clock();
+	if(tPrev==0.0f){tPrev=now;}
+	float dt = static_cast<float>( now - tPrev ) /  CLOCKS_PER_SEC;
+	tPrev = now;
 	int width = GetDeviceCaps(hdc, HORZRES);
 	int height = GetDeviceCaps(hdc,VERTRES);
-	m_staticText.Update(0.033f, width, height);
+	m_staticText.Update(dt, width, height);
 	m_staticText.Render(hdc);
-	m_scrollingText.Update(0.033f, width, height);
+	m_scrollingText.Update(dt, width, height);
 	m_scrollingText.Render(hdc);
 }
 
