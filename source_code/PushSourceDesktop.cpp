@@ -54,13 +54,13 @@ std::string CPushPinDesktop::RemoveScrollingMessage(const std::wstring& name)
 	m_scrollingText.RemoveMessage(name);
 	return std::string("SUCCESS");
 }
-std::string CPushPinDesktop::ScrollingMessage(const int& h, 
-	const std::wstring& msg, 
-	const std::wstring& name, 
-	const int& w, const int& x, const int& y,
-	const float lifetime)
+std::string CPushPinDesktop::ScrollingMessage(const std::wstring& msg,
+		const std::wstring& name,
+		const int& repetitions,
+		const float& scroll_time,
+		const int& y)
 {
-	m_scrollingText.AddMessage(msg, name, x, y, w, h, lifetime);
+	m_scrollingText.AddMessage(msg, name, repetitions, scroll_time, y);
 	return std::string("SUCCESS");
 }
 

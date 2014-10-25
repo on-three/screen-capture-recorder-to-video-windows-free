@@ -15,7 +15,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         {
             this->bindAndAddMethod(new jsonrpc::Procedure("RemoveScrollingMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveScrollingMessageI);
             this->bindAndAddMethod(new jsonrpc::Procedure("RemoveStaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveStaticMessageI);
-            this->bindAndAddMethod(new jsonrpc::Procedure("ScrollingMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "h",jsonrpc::JSON_INTEGER,"lifetime",jsonrpc::JSON_REAL,"msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"w",jsonrpc::JSON_INTEGER,"x",jsonrpc::JSON_INTEGER,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::ScrollingMessageI);
+            this->bindAndAddMethod(new jsonrpc::Procedure("ScrollingMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"repetitions",jsonrpc::JSON_INTEGER,"scroll_time",jsonrpc::JSON_REAL,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::ScrollingMessageI);
             this->bindAndAddMethod(new jsonrpc::Procedure("StaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "h",jsonrpc::JSON_INTEGER,"lifetime",jsonrpc::JSON_REAL,"msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"w",jsonrpc::JSON_INTEGER,"x",jsonrpc::JSON_INTEGER,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::StaticMessageI);
 
         }
@@ -32,7 +32,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
 
         inline virtual void ScrollingMessageI(const Json::Value& request, Json::Value& response) 
         {
-            response = this->ScrollingMessage(request["h"].asInt(), request["lifetime"].asDouble(), request["msg"].asString(), request["name"].asString(), request["w"].asInt(), request["x"].asInt(), request["y"].asInt());
+            response = this->ScrollingMessage(request["msg"].asString(), request["name"].asString(), request["repetitions"].asInt(), request["scroll_time"].asDouble(), request["y"].asInt());
         }
 
         inline virtual void StaticMessageI(const Json::Value& request, Json::Value& response) 
@@ -43,7 +43,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
 
         virtual std::string RemoveScrollingMessage(const std::string& name) = 0;
         virtual std::string RemoveStaticMessage(const std::string& name) = 0;
-        virtual std::string ScrollingMessage(const int& h, const double& lifetime, const std::string& msg, const std::string& name, const int& w, const int& x, const int& y) = 0;
+        virtual std::string ScrollingMessage(const std::string& msg, const std::string& name, const int& repetitions, const double& scroll_time, const int& y) = 0;
         virtual std::string StaticMessage(const int& h, const double& lifetime, const std::string& msg, const std::string& name, const int& w, const int& x, const int& y) = 0;
 
 };

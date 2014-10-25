@@ -89,11 +89,11 @@ public:
 	std::string RemoveStaticMessage(const std::wstring& name);
 
 	std::string RemoveScrollingMessage(const std::wstring& name);
-	std::string ScrollingMessage(const int& h, 
-		const std::wstring& msg, 
-		const std::wstring& name, 
-		const int& w, const int& x, const int& y,
-		const float lifetime);
+	std::string ScrollingMessage(const std::wstring& msg,
+		const std::wstring& name,
+		const int& repetitions,
+		const float& scroll_time,
+		const int& y);
 protected:
 
     //int m_FramesWritten;				// To track where we are

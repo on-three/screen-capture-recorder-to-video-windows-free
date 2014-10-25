@@ -19,9 +19,9 @@ public:
 	ScrollingText(const ScrollingText& other);;
 	ScrollingText();
 	ScrollingText(const std::wstring& text,
-		const int x, const int y,
-		const int w, const int h,
-		const float lifetime=0.0f);
+		const int y,
+		const int repetitions=0,
+		const float scroll_time=10.0f);
 
 	std::wstring Text(void){return m_text;};
 	int X(void)const{return m_x;};
@@ -30,7 +30,7 @@ public:
 	void W(const int w){m_w=w;};
 	int H(void)const{return m_h;};
 	void H(const int h){m_h=h;};
-	float Lifetime(void)const{return m_lifetime;};
+	float ScrollTime(void)const{return m_scroll_time;};
 
 	void Render(HDC hdc);
 	bool Update(const float dt, const int screen_w, const int screen_h);
@@ -42,8 +42,9 @@ private:
 	int m_w;
 	int m_h;
 
-	const float m_lifetime;//time to life in seconds; 0 is infinite.
-	const float m_cycletime;//time for one scroll in seconds.
+	const int m_repetitions;//time to life in seconds; 0 is infinite.
+	int m_cycle;
+	const float m_scroll_time;//time for one scroll in seconds.
 	float m_cumulativeTime;
 };
 
@@ -55,9 +56,9 @@ public:
 public:
 	void AddMessage(const std::wstring& msg,
 		const std::wstring& name,
-		const int x, const int y,
-		const int w, const int h,
-		const float lifetime);
+		const int& repetitions,
+		const float& scroll_time,
+		const int& y);
 	void RemoveMessage(const std::wstring& name);
 	void ClearAllMessages(void);
 

@@ -11,18 +11,15 @@ DATE: Sunday, June 1st 2014
 python test to make json rpc calls on video overlay pipeline.
 
 [
-    {	//This is how you define a method with named parameters.
-        "method": "StaticMessage",
+        "method": "ScrollingMessage",
         "params": {
             "msg": "Hello.",
 			"name" : "1",
-			"x" : 0,
 			"y" : 0,
-			"w" : 100,
-			"h" : 100
+			"scroll_time" : 6.0,
+			"repetitions" : 0
         },
         "returns": "Success"
-    }
 ]
   
 '''
@@ -33,12 +30,10 @@ import argparse
 def main():
   parser = argparse.ArgumentParser(description='Control scrolling messages via json rpc messages.')
   parser.add_argument('message', help='Test to display on video stream', type=str, nargs='?', default=None)
-  #parser.add_argument('-x', help='x pos of message on screen in pixels', type=int, default=100)
   parser.add_argument('-y', help='y pos of message on screen in pixels', type=int, default=100)
-  parser.add_argument('--width', help='width of text box on screen in pixels', type=int, default=100)
-  parser.add_argument('--height', help='height of text box on screen in pixels', type=int, default=100)
   parser.add_argument('-n', '--name', help='Friendly name to remove/change this message later.', type=str, default='1')
-  parser.add_argument('-l', '--lifetime', help='Lifetime in seconds of message. Zero is forever.', type=float, default=0.0)
+  parser.add_argument('-c', '--cycles', help='Number of times message is scrolled. Zero is forever.', type=int, default=0)
+  parser.add_argument('-t', '--time', help='Time to scroll across screen once.', type=float, default=10.0)
   parser.add_argument('-r', '--remove', help='Remove message specified by -n (name) parameter', action='store_true')
   args = parser.parse_args()
 
@@ -49,17 +44,15 @@ def main():
   )
 
   msg = args.message
-  x = 0
   y = args.y
-  w = args.width
-  h = args.height
+  repetitions = args.cycles
+  scroll_time = args.time
   name = args.name
-  lifetime = args.lifetime
   response = ''
   if args.remove:
     response = http_client.RemoveScrollingMessage(name=name)
   elif msg:
-    response = http_client.ScrollingMessage(msg=msg, name=name, x=x, y=y, w=100, h=100, lifetime=lifetime)
+    response = http_client.ScrollingMessage(msg=msg, name=name, y=y, repetitions=repetitions, scroll_time=scroll_time)
 
   print('Response from server: {r}'.format(r=response))
   
