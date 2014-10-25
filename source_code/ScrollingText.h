@@ -51,6 +51,7 @@ private:
 class ScrollingTextManager
 {
 public:
+	ScrollingTextManager();
 	~ScrollingTextManager();
 
 public:
@@ -68,6 +69,9 @@ public:
 
 private:
 	std::map<std::wstring, ScrollingText*> m_text;
+
+	//control access to message list
+	HANDLE m_mutex;
 };
 
 #endif

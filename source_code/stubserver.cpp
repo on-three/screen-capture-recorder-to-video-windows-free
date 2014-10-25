@@ -71,6 +71,10 @@ std::string MyStubServer::ScrollingMessage(const std::string& msg,
 	//return std::string("success");
 }
 
+std::string MyStubServer::ClearAll(const int& arg) {
+	return m_captureDevice->ClearAll(arg);
+}
+
 /*
 int main()
 {

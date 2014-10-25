@@ -48,6 +48,9 @@
     <ClCompile Include="ScrollingText.cpp">
       <Filter>Source Files\Overlay</Filter>
     </ClCompile>
+    <ClCompile Include="MutexLock.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="PushSource.def">
@@ -80,6 +83,9 @@
       <Filter>Header Files\Overlay</Filter>
     </ClInclude>
     <ClInclude Include="ScrollingText.h">
+      <Filter>Header Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="MutexLock.h">
       <Filter>Header Files\Overlay</Filter>
     </ClInclude>
   </ItemGroup>

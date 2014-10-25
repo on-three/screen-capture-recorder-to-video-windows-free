@@ -2,11 +2,19 @@
 
 #include <windows.h>
 #include <gdiplus.h>
+#include "MutexLock.h"
 using namespace Gdiplus;
 
+ScrollingTextManager::ScrollingTextManager() {
+	//m_mutex = CreateMutex( 
+    //    NULL,              // default security attributes
+    //    FALSE,             // initially not owned
+    //    NULL);             // unnamed mutex 
+}
 
 ScrollingTextManager::~ScrollingTextManager() {
-	ClearAllMessages();
+	//ClearAllMessages();
+	//CloseHandle(m_mutex);
 }
 
 void ScrollingTextManager::AddMessage(const std::wstring& msg,
@@ -15,6 +23,7 @@ void ScrollingTextManager::AddMessage(const std::wstring& msg,
 		const float& scroll_time,
 		const int& y)
 {
+	//MutexLock lock(m_mutex);
 	ScrollingText* newText = new ScrollingText(msg, y, repetitions, scroll_time);
 	std::map<std::wstring, ScrollingText*>::iterator txt = m_text.find(name);
 	if(txt!=m_text.end()){
@@ -25,6 +34,7 @@ void ScrollingTextManager::AddMessage(const std::wstring& msg,
 
 void ScrollingTextManager::RemoveMessage(const std::wstring& name)
 {
+	//MutexLock lock(m_mutex);
 	std::map<std::wstring, ScrollingText*>::iterator txt = m_text.find(name);
 	if(txt!=m_text.end()){
 		delete txt->second;
@@ -33,8 +43,9 @@ void ScrollingTextManager::RemoveMessage(const std::wstring& name)
 }
 void ScrollingTextManager::ClearAllMessages(void)
 {
+	//MutexLock lock(m_mutex);
 	for(std::map<std::wstring, ScrollingText*>::iterator i = m_text.begin();
-		i!=m_text.end();)
+		i!=m_text.end();++i)
 	{
 		delete i->second;
 	}
@@ -44,6 +55,7 @@ void ScrollingTextManager::ClearAllMessages(void)
 bool ScrollingTextManager::Update(const float dt,
 	const int screen_w, const int screen_h)
 {
+	//MutexLock lock(m_mutex);
 	for(std::map<std::wstring, ScrollingText*>::iterator i = m_text.begin();
 		i!=m_text.end();)
 	{
@@ -59,6 +71,8 @@ bool ScrollingTextManager::Update(const float dt,
 }
 void ScrollingTextManager::Render(HDC hdc)
 {
+	//MutexLock lock(m_mutex);
+
 	Graphics graphics(hdc);
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
     graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);

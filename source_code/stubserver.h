@@ -31,6 +31,7 @@ class MyStubServer : public AbstractMyStubServer
 			const int& repetitions,
 			const double& scroll_time,
 			const int& y);
+		virtual std::string ClearAll(const int& arg);
 private:
 	MsgPresentationInterface* const m_captureDevice;
 

@@ -64,6 +64,12 @@ std::string CPushPinDesktop::ScrollingMessage(const std::wstring& msg,
 	return std::string("SUCCESS");
 }
 
+std::string CPushPinDesktop::ClearAll(const int& arg) {
+	m_staticText.ClearAllMessages();
+	m_scrollingText.ClearAllMessages();
+	return std::string("success");
+}
+
 // the default child constructor...
 CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
         : CSourceStream(NAME("Push Source CPushPinDesktop child/pin"), phr, pFilter, L"Capture"),

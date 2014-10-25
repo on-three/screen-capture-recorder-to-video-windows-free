@@ -13,6 +13,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         AbstractMyStubServer(jsonrpc::AbstractServerConnector* conn) :
             jsonrpc::AbstractServer<AbstractMyStubServer>(conn) 
         {
+            this->bindAndAddMethod(new jsonrpc::Procedure("ClearAll", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "arg",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::ClearAllI);
             this->bindAndAddMethod(new jsonrpc::Procedure("RemoveScrollingMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveScrollingMessageI);
             this->bindAndAddMethod(new jsonrpc::Procedure("RemoveStaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveStaticMessageI);
             this->bindAndAddMethod(new jsonrpc::Procedure("ScrollingMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "msg",jsonrpc::JSON_STRING,"name",jsonrpc::JSON_STRING,"repetitions",jsonrpc::JSON_INTEGER,"scroll_time",jsonrpc::JSON_REAL,"y",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::ScrollingMessageI);
@@ -20,6 +21,11 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
 
         }
         
+        inline virtual void ClearAllI(const Json::Value& request, Json::Value& response) 
+        {
+            response = this->ClearAll(request["arg"].asInt());
+        }
+
         inline virtual void RemoveScrollingMessageI(const Json::Value& request, Json::Value& response) 
         {
             response = this->RemoveScrollingMessage(request["name"].asString());
@@ -41,6 +47,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         }
 
 
+        virtual std::string ClearAll(const int& arg) = 0;
         virtual std::string RemoveScrollingMessage(const std::string& name) = 0;
         virtual std::string RemoveStaticMessage(const std::string& name) = 0;
         virtual std::string ScrollingMessage(const std::string& msg, const std::string& name, const int& repetitions, const double& scroll_time, const int& y) = 0;

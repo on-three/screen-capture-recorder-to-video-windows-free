@@ -26,6 +26,7 @@ public:
 		const float& scroll_time,
 		const int& y) = 0;
 	virtual std::string RemoveStaticMessage(const std::wstring& name) = 0;
+	virtual std::string ClearAll(const int& arg) = 0;
 };
 
 #endif

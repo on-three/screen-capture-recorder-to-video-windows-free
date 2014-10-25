@@ -47,6 +47,7 @@ private:
 class StaticTextManager
 {
 public:
+	StaticTextManager();
 	~StaticTextManager();
 
 public:
@@ -64,6 +65,9 @@ public:
 
 private:
 	std::map<std::wstring, StaticText*> m_text;
+	
+	//Control access to message list
+	HANDLE m_mutex;
 };
 
 #endif

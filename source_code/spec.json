@@ -36,6 +36,13 @@
             "name" : "1"
         },
         "returns": "Success"
+    },
+		{
+        "method": "ClearAll",
+        "params": {
+            "arg" : 0
+        },
+        "returns": "Success"
     }
 
 ]

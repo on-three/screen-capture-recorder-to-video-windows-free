@@ -94,6 +94,7 @@ public:
 		const int& repetitions,
 		const float& scroll_time,
 		const int& y);
+	std::string ClearAll(const int& arg);
 protected:
 
     //int m_FramesWritten;				// To track where we are

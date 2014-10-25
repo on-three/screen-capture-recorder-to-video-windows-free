@@ -1,12 +1,21 @@
 #include "StaticText.h"
+#include "MutexLock.h"
 
 #include <windows.h>
 #include <gdiplus.h>
 using namespace Gdiplus;
 
 
+StaticTextManager::StaticTextManager() {
+	//m_mutex = CreateMutex( 
+    //    NULL,              // default security attributes
+    //    FALSE,             // initially not owned
+	//   NULL);             // unnamed mutex
+}
+
 StaticTextManager::~StaticTextManager() {
-	ClearAllMessages();
+	//ClearAllMessages();
+	//CloseHandle(m_mutex);
 }
 
 void StaticTextManager::AddMessage(const std::wstring& msg,
@@ -15,6 +24,8 @@ void StaticTextManager::AddMessage(const std::wstring& msg,
 	const int w, const int h,
 	const float lifetime)
 {
+	//MutexLock lock(m_mutex);
+
 	StaticText* newText = new StaticText(msg, x, y, w, h, lifetime);
 	std::map<std::wstring, StaticText*>::iterator txt = m_text.find(name);
 	if(txt!=m_text.end()){
@@ -25,6 +36,7 @@ void StaticTextManager::AddMessage(const std::wstring& msg,
 
 void StaticTextManager::RemoveMessage(const std::wstring& name)
 {
+	//MutexLock lock(m_mutex);
 	std::map<std::wstring, StaticText*>::iterator txt = m_text.find(name);
 	if(txt!=m_text.end()){
 		delete txt->second;
@@ -33,8 +45,9 @@ void StaticTextManager::RemoveMessage(const std::wstring& name)
 }
 void StaticTextManager::ClearAllMessages(void)
 {
+	//MutexLock lock(m_mutex);
 	for(std::map<std::wstring, StaticText*>::iterator i = m_text.begin();
-		i!=m_text.end();)
+		i!=m_text.end();++i)
 	{
 		delete i->second;
 	}
@@ -44,6 +57,7 @@ void StaticTextManager::ClearAllMessages(void)
 bool StaticTextManager::Update(const float dt,
 	const int screen_w, const int screen_h)
 {
+	//MutexLock lock(m_mutex);
 	for(std::map<std::wstring, StaticText*>::iterator i = m_text.begin();
 		i!=m_text.end();)
 	{
@@ -59,6 +73,8 @@ bool StaticTextManager::Update(const float dt,
 }
 void StaticTextManager::Render(HDC hdc)
 {
+	//MutexLock lock(m_mutex);
+
 	Graphics graphics(hdc);
 	graphics.SetSmoothingMode(SmoothingModeAntiAlias);
     graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);
