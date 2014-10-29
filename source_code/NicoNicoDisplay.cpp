@@ -22,8 +22,6 @@ DisplayManager::DisplayManager() {
 	for(int l=0;l<LANE_COUNT;++l)
 	{
 		Lane* lane = new Lane(l*(LANE_OFFSET+1));
-		//std::wstring t(TEXT("test"));
-		//lane->AddMesssage(new Message(t,100,0));
 		m_lanes.push_back(lane);
 		
 	}
@@ -33,13 +31,12 @@ DisplayManager::~DisplayManager() {
 	//ClearAllMessages();
 	//CloseHandle(m_mutex);
 
-	//for(std::list<Lane*>::iterator l=m_lanes.begin();
-	//	l!=m_lanes.end(); ++l)
-	//{
-	//	delete *l;
-	//}
-	//m_lanes.clear();
-	/*
+	for(std::list<Lane*>::iterator l=m_lanes.begin();
+		l!=m_lanes.end(); ++l)
+	{
+		delete *l;
+	}
+	m_lanes.clear();
 	//dont' forget we might have pending messages
 	for(std::list<Message*>::iterator msg = m_pendingMessages.begin();
 		msg!=m_pendingMessages.end();++msg) {
@@ -47,7 +44,6 @@ DisplayManager::~DisplayManager() {
 		delete *msg;
 	}
 	m_pendingMessages.clear();
-	*/
 }
 
 void DisplayManager::AddMessage(const std::wstring& msg,
@@ -58,27 +54,14 @@ void DisplayManager::AddMessage(const std::wstring& msg,
 {
 	//MutexLock lock(m_mutex);
 
-	//std::wstring t(TEXT("newtext"));
 	Message* newText = new Message( msg, y, 1);
-	for(std::list<Lane*>::iterator l=m_lanes.begin();
-		l!=m_lanes.end(); ++l)
-	{
-		if((*l)->AddMesssage(newText)) {
-			break;
-		}
-	}
-	//m_pendingMessages.push_back(newText);
+	m_pendingMessages.push_back(newText);
 	
 }
 
 void DisplayManager::RemoveMessage(const std::wstring& name)
 {
 	//MutexLock lock(m_mutex);
-	/*std::map<std::wstring, Message*>::iterator txt = m_text.find(name);
-	if(txt!=m_text.end()){
-		delete txt->second;
-		m_text.erase(txt);
-	}*/
 }
 void DisplayManager::ClearAllMessages(void)
 {
@@ -132,40 +115,37 @@ void DisplayManager::Render(HDC hdc)
 
 	//Before drawing, calculate the size of any pending messages for this render context
 	//and add them to a lane as appropriate
-	/*
+	int screen_width = 0;
+	int screen_height = 0;
+	if(!m_pendingMessages.empty()){
+		screen_width = GetDeviceCaps(hdc, HORZRES);
+		screen_height = GetDeviceCaps(hdc,VERTRES);
+	}
 	for(std::list<Message*>::iterator i=m_pendingMessages.begin();
 		i!=m_pendingMessages.end();++i)
 	{
-		for(std::list<Lane*>::iterator lane=m_lanes.begin();
-			lane!=m_lanes.end();++lane)
-		{
-			(*lane)->AddMesssage(*i);
-		}
-	}
-	*/
-		/*
+		bool handled_msg = false;
 		Message* msg = *i;
-		Gdiplus::RectF bb;
-		graphics.MeasureString(msg->Text().c_str(), -1, &font, origin, &bb);
-		msg->W(static_cast<int>(bb.Width));
-		msg->H(static_cast<int>(bb.Height));
-		bool lane_found=false;
 		for(std::list<Lane*>::iterator lane=m_lanes.begin();
 			lane!=m_lanes.end();++lane)
 		{
-			if((*lane)->AddMesssage(msg))
-			{
-				lane_found=true;
-				//break;
+			if((*lane)->AddMesssage(msg)) {
+				handled_msg=true;
+
+				Gdiplus::RectF bb;
+				graphics.MeasureString(msg->Text().c_str(), -1, &font, origin, &bb);
+				msg->W(static_cast<int>(bb.Width));
+				msg->H(static_cast<int>(bb.Height));
+				msg->X(static_cast<int>(screen_width));
+
+				break;
 			}
 		}
-		if(!lane_found) {
-			//for now we're going to just drop messages we can't fit
-			//delete msg;
+		if(!handled_msg) {
+			delete msg;
 		}
-		
-	}*/
-	//m_pendingMessages.clear();
+	}
+	m_pendingMessages.clear();
 
 	for(std::list<Lane*>::iterator lane = m_lanes.begin();
 		lane!=m_lanes.end(); ++lane)
@@ -175,13 +155,6 @@ void DisplayManager::Render(HDC hdc)
 			i!=messages.end(); ++i)
 		{
 			Message* msg = (*i);
-			
-			if(msg->W()<0 || msg->H()<0) {
-				Gdiplus::RectF bb;
-				graphics.MeasureString(msg->Text().c_str(), -1, &font, origin, &bb);
-				msg->W(static_cast<int>(bb.Width));
-				msg->H(static_cast<int>(bb.Height));
-			}
 			path.AddString(msg->Text().c_str(), -1, &fontFamily, 
 			FontStyleRegular, 36, Gdiplus::Point(msg->X(), msg->Y()), &strformat );
 		}
@@ -199,11 +172,11 @@ Lane::Lane(const int y)
 }
 Lane::~Lane()
 {
-	//for(std::list<Message*>::iterator i=m_messages.begin();
-	//	i!=m_messages.end();++i)
-	//{
-	//	delete *i;
-	//}
+	for(std::list<Message*>::iterator i=m_messages.begin();
+		i!=m_messages.end();++i)
+	{
+		delete *i;
+	}
 }
 
 void Lane::Render(HDC hdc, const int screen_w, const int screen_h)
@@ -212,7 +185,6 @@ void Lane::Render(HDC hdc, const int screen_w, const int screen_h)
 }
 bool Lane::Update(float dt, const int screen_w, const int screen_h)
 {
-	bool addmsg = false;
 	for(std::list<Message*>::iterator msg=m_messages.begin();
 		msg!=m_messages.end();)
 	{
@@ -220,19 +192,9 @@ bool Lane::Update(float dt, const int screen_w, const int screen_h)
 		{
 			delete (*msg);
 			msg = m_messages.erase(msg);
-			//debug
-			addmsg = true;
 		}else{
 			++msg;
 		}
-	}
-
-	
-	//debug
-	if(addmsg) {
-		//std::wstring t(TEXT("test"));
-		//Message* newText = new Message(t, 100, 1);
-		//this->AddMesssage(newText);
 	}
 
 	return m_messages.empty();

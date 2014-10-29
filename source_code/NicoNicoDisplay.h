@@ -29,6 +29,7 @@ public:
 
 	std::wstring Text(void){return m_text;};
 	int X(void)const{return m_x;};
+	void X(const int x){m_x=x;};
 	int Y(void)const{return m_y;};
 	void Y(const int y){m_y=y;};
 	int W(void)const{return m_w;};
