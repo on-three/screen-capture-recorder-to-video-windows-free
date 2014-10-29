@@ -27,6 +27,7 @@ public:
 		const int& y) = 0;
 	virtual std::string RemoveStaticMessage(const std::wstring& name) = 0;
 	virtual std::string ClearAll(const int& arg) = 0;
+	virtual std::string AddNicoNicoMsg(const std::wstring& msg) = 0;
 };
 
 #endif

@@ -32,6 +32,7 @@ class MyStubServer : public AbstractMyStubServer
 			const double& scroll_time,
 			const int& y);
 		virtual std::string ClearAll(const int& arg);
+		virtual std::string AddNicoNicoMsg(const std::string& msg);
 private:
 	MsgPresentationInterface* const m_captureDevice;
 

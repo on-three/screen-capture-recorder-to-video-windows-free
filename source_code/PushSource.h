@@ -14,6 +14,7 @@
 #include "MsgPresentationInterface.h"
 #include "StaticText.h"
 #include "ScrollingText.h"
+#include "NicoNicoDisplay.h"
 
 /*
 // UNITS = 10 ^ 7  
@@ -95,6 +96,7 @@ public:
 		const float& scroll_time,
 		const int& y);
 	std::string ClearAll(const int& arg);
+	std::string AddNicoNicoMsg(const std::wstring& msg);
 protected:
 
     //int m_FramesWritten;				// To track where we are
@@ -123,6 +125,7 @@ protected:
 	MyStubServer* m_jsonrpcServer;
 	StaticTextManager m_staticText;
 	ScrollingTextManager m_scrollingText;
+	NicoNico::DisplayManager m_nicoNicoDisplay;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 

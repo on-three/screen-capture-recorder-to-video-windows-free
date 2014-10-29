@@ -51,6 +51,9 @@
     <ClCompile Include="MutexLock.cpp">
       <Filter>Source Files\Overlay</Filter>
     </ClCompile>
+    <ClCompile Include="NicoNicoDisplay.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="PushSource.def">
@@ -86,6 +89,9 @@
       <Filter>Header Files\Overlay</Filter>
     </ClInclude>
     <ClInclude Include="MutexLock.h">
+      <Filter>Header Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="NicoNicoDisplay.h">
       <Filter>Header Files\Overlay</Filter>
     </ClInclude>
   </ItemGroup>

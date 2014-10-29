@@ -43,6 +43,13 @@
             "arg" : 0
         },
         "returns": "Success"
+    },
+	{
+        "method": "AddNicoNicoMsg",
+        "params": {
+            "msg" : "message"
+        },
+        "returns": "Success"
     }
 
 ]

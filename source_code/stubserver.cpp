@@ -75,6 +75,12 @@ std::string MyStubServer::ClearAll(const int& arg) {
 	return m_captureDevice->ClearAll(arg);
 }
 
+std::string MyStubServer::AddNicoNicoMsg(const std::string& msg)
+{
+	std::wstring message(msg.begin(), msg.end());
+	return m_captureDevice->AddNicoNicoMsg(message);
+}
+
 /*
 int main()
 {

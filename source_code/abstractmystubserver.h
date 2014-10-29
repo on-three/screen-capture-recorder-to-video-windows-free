@@ -13,6 +13,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         AbstractMyStubServer(jsonrpc::AbstractServerConnector* conn) :
             jsonrpc::AbstractServer<AbstractMyStubServer>(conn) 
         {
+            this->bindAndAddMethod(new jsonrpc::Procedure("AddNicoNicoMsg", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "msg",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::AddNicoNicoMsgI);
             this->bindAndAddMethod(new jsonrpc::Procedure("ClearAll", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "arg",jsonrpc::JSON_INTEGER, NULL), &AbstractMyStubServer::ClearAllI);
             this->bindAndAddMethod(new jsonrpc::Procedure("RemoveScrollingMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveScrollingMessageI);
             this->bindAndAddMethod(new jsonrpc::Procedure("RemoveStaticMessage", jsonrpc::PARAMS_BY_NAME, jsonrpc::JSON_STRING, "name",jsonrpc::JSON_STRING, NULL), &AbstractMyStubServer::RemoveStaticMessageI);
@@ -21,6 +22,11 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
 
         }
         
+        inline virtual void AddNicoNicoMsgI(const Json::Value& request, Json::Value& response) 
+        {
+            response = this->AddNicoNicoMsg(request["msg"].asString());
+        }
+
         inline virtual void ClearAllI(const Json::Value& request, Json::Value& response) 
         {
             response = this->ClearAll(request["arg"].asInt());
@@ -47,6 +53,7 @@ class AbstractMyStubServer : public jsonrpc::AbstractServer<AbstractMyStubServer
         }
 
 
+        virtual std::string AddNicoNicoMsg(const std::string& msg) = 0;
         virtual std::string ClearAll(const int& arg) = 0;
         virtual std::string RemoveScrollingMessage(const std::string& name) = 0;
         virtual std::string RemoveStaticMessage(const std::string& name) = 0;

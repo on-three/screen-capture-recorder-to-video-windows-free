@@ -110,6 +110,7 @@
   <ItemGroup>
     <ClCompile Include="DibHelper.cpp" />
     <ClCompile Include="MutexLock.cpp" />
+    <ClCompile Include="NicoNicoDisplay.cpp" />
     <ClCompile Include="parent.cpp" />
     <ClCompile Include="PushSourceDesktop.cpp" />
     <ClCompile Include="PushSourceDesktopAccessories.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="DibHelper.h" />
     <ClInclude Include="MsgPresentationInterface.h" />
     <ClInclude Include="MutexLock.h" />
+    <ClInclude Include="NicoNicoDisplay.h" />
     <ClInclude Include="PushGuids.h" />
     <ClInclude Include="PushSource.h" />
     <ClInclude Include="ScrollingText.h" />

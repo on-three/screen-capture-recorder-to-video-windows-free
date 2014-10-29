@@ -40,7 +40,7 @@ std::string CPushPinDesktop::StaticMessage(const int& h,
 		const std::wstring& name, 
 		const int& w, const int& x, const int& y, const float lifetime)
 {
-	m_staticText.AddMessage(msg, name, x, y, w, h, lifetime);
+	m_nicoNicoDisplay.AddMessage(msg,msg,1,10.0f,100);
 	return std::string("SUCCESS");
 }
 
@@ -67,6 +67,12 @@ std::string CPushPinDesktop::ScrollingMessage(const std::wstring& msg,
 std::string CPushPinDesktop::ClearAll(const int& arg) {
 	m_staticText.ClearAllMessages();
 	m_scrollingText.ClearAllMessages();
+	m_nicoNicoDisplay.ClearAllMessages();
+	return std::string("success");
+}
+
+std::string CPushPinDesktop::AddNicoNicoMsg(const std::wstring& msg) {
+	m_nicoNicoDisplay.AddMessage(msg,msg,1,10.0f,100);
 	return std::string("success");
 }
 
@@ -396,6 +402,8 @@ void CPushPinDesktop::OnPaint(HDC hdc)
 	m_staticText.Render(hdc);
 	m_scrollingText.Update(dt, width, height);
 	m_scrollingText.Render(hdc);
+	m_nicoNicoDisplay.Update(dt, width, height);
+	m_nicoNicoDisplay.Render(hdc);
 }
 
 void CPushPinDesktop::CopyScreenToDataBlock(HDC hScrDC, BYTE *pData, BITMAPINFO *pHeader, IMediaSample *pSample)
