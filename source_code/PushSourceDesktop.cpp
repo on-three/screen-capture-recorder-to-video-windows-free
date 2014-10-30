@@ -40,7 +40,7 @@ std::string CPushPinDesktop::StaticMessage(const int& h,
 		const std::wstring& name, 
 		const int& w, const int& x, const int& y, const float lifetime)
 {
-	m_nicoNicoDisplay.AddMessage(msg,msg,1,10.0f,100);
+	m_staticText.AddMessage(msg, name, x, y, w, h, lifetime);
 	return std::string("SUCCESS");
 }
 

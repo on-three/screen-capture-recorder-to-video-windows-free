@@ -28,6 +28,16 @@ class MyStubServer : public AbstractMyStubServer
         virtual int addNumbers(const int& param1, const int& param2);
 };
 */
+
+std::wstring stdUTF8ToWideString(const std::string& str) {
+	int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , str.c_str() , -1, NULL , 0 );
+	wchar_t* wstr = new wchar_t[wchars_num];
+	MultiByteToWideChar( CP_UTF8 , 0 , str.c_str() , -1, wstr , wchars_num );
+	std::wstring ws(wstr);
+	delete [] wstr;
+	return ws;
+}
+
 MyStubServer::MyStubServer(MsgPresentationInterface* captureDevice)
 	:AbstractMyStubServer(new HttpServer(8080))
 	,m_captureDevice(captureDevice)
@@ -45,8 +55,8 @@ std::string MyStubServer::StaticMessage(const int& h,
 			const std::string& name, 
 			const int& w, const int& x, const int& y)
 {
-	std::wstring message(msg.begin(), msg.end());
-	std::wstring freindlyName(name.begin(), name.end());
+	std::wstring message = stdUTF8ToWideString(msg);
+	std::wstring freindlyName = stdUTF8ToWideString(name);
 	return m_captureDevice->StaticMessage(h, 
 		message, freindlyName, 
 		w, x, y, static_cast<float>(lifetime));
@@ -55,7 +65,7 @@ std::string MyStubServer::StaticMessage(const int& h,
 
 std::string MyStubServer::RemoveScrollingMessage(const std::string& name)
 {
-	std::wstring freindlyName(name.begin(), name.end());
+	std::wstring freindlyName = stdUTF8ToWideString(name);
 	return m_captureDevice->RemoveScrollingMessage(freindlyName);
 }
 std::string MyStubServer::ScrollingMessage(const std::string& msg,
@@ -64,8 +74,8 @@ std::string MyStubServer::ScrollingMessage(const std::string& msg,
 	const double& scroll_time,
 	const int& y)
 {
-	std::wstring message(msg.begin(), msg.end());
-	std::wstring freindlyName(name.begin(), name.end());
+	std::wstring message = stdUTF8ToWideString(msg);
+	std::wstring freindlyName = stdUTF8ToWideString(name);
 	return m_captureDevice->ScrollingMessage(message, freindlyName, 
 		repetitions, static_cast<float>(scroll_time), y);
 	//return std::string("success");
@@ -77,7 +87,8 @@ std::string MyStubServer::ClearAll(const int& arg) {
 
 std::string MyStubServer::AddNicoNicoMsg(const std::string& msg)
 {
-	std::wstring message(msg.begin(), msg.end());
+	//std::wstring message(msg.begin(), msg.end());
+	std::wstring message = stdUTF8ToWideString(msg);
 	return m_captureDevice->AddNicoNicoMsg(message);
 }
 

@@ -129,15 +129,13 @@ void DisplayManager::Render(HDC hdc)
 		for(std::list<Lane*>::iterator lane=m_lanes.begin();
 			lane!=m_lanes.end();++lane)
 		{
+			Gdiplus::RectF bb;
+			graphics.MeasureString(msg->Text().c_str(), -1, &font, origin, &bb);
+			msg->W(static_cast<int>(bb.Width));
+			msg->H(static_cast<int>(bb.Height));
+			msg->X(static_cast<int>(screen_width));
 			if((*lane)->AddMesssage(msg)) {
 				handled_msg=true;
-
-				Gdiplus::RectF bb;
-				graphics.MeasureString(msg->Text().c_str(), -1, &font, origin, &bb);
-				msg->W(static_cast<int>(bb.Width));
-				msg->H(static_cast<int>(bb.Height));
-				msg->X(static_cast<int>(screen_width));
-
 				break;
 			}
 		}
@@ -206,6 +204,43 @@ bool Lane::AddMesssage(Message* msg)
 	if(!m_messages.empty()){
 		return false;
 	}
+	/*
+	//We want to calculate if we add this msg to this lane, will it "hit" the message
+	//already in the lane (if there is one) during its lifetime. If it does, return
+	//'false' to indicate we should place this in another lane
+	if(m_messages.empty()) {
+		msg->Y(m_y);
+		m_messages.push_back(msg);
+		return true;
+	}
+
+	//we only need be concerned with 'hitting' the last message in this lane
+	Message* m1 = m_messages.back();
+	Message* m2 = msg;
+	float scroll_time = m2->ScrollTime();
+	int screen_width = m2->X();//true only when messages added
+	float v1 = (m1->W()+screen_width)/scroll_time;
+	float v2 = (m2->W()+screen_width)/scroll_time;
+	if(m1->X()>m1->W() && v1>=v2) {
+		//new message will never "catch up" so add it
+		msg->Y(m_y);
+		m_messages.push_back(msg);
+		return true;
+	}
+	//TODO:
+	//solve to see if new messge will "catch up"
+	int m1_w = m1->W();
+	int m1_x = m1->X();
+	int m2_w = m2->W();
+	int m2_x = m2->X();
+
+
+	if(!m_messages.empty())
+	{
+		return false;
+	}
+	*/
+	//add this msg to the lane and return 'true' to indicate it's added
 	msg->Y(m_y);
 	m_messages.push_back(msg);
 	return true;
