@@ -111,7 +111,7 @@ void DisplayManager::Render(HDC hdc)
 		Gdiplus::UnitPixel);
 	GraphicsPath path;
 	StringFormat strformat;
-	Gdiplus::RectF origin(0,0,848.0, 480.0);
+	Gdiplus::RectF origin(0,0,848.0*4.0, 480.0);
 
 	//Before drawing, calculate the size of any pending messages for this render context
 	//and add them to a lane as appropriate
@@ -200,11 +200,6 @@ bool Lane::Update(float dt, const int screen_w, const int screen_h)
 
 bool Lane::AddMesssage(Message* msg)
 {
-	//for now, just one message per lane
-	if(!m_messages.empty()){
-		return false;
-	}
-	/*
 	//We want to calculate if we add this msg to this lane, will it "hit" the message
 	//already in the lane (if there is one) during its lifetime. If it does, return
 	//'false' to indicate we should place this in another lane
@@ -221,25 +216,27 @@ bool Lane::AddMesssage(Message* msg)
 	int screen_width = m2->X();//true only when messages added
 	float v1 = (m1->W()+screen_width)/scroll_time;
 	float v2 = (m2->W()+screen_width)/scroll_time;
-	if(m1->X()>m1->W() && v1>=v2) {
-		//new message will never "catch up" so add it
-		msg->Y(m_y);
-		m_messages.push_back(msg);
-		return true;
-	}
-	//TODO:
-	//solve to see if new messge will "catch up"
+	//if(m1->X()>m1->W() && v1>=v2) {
+	//	//new message will never "catch up" so add it
+	//	msg->Y(m_y);
+	//	m_messages.push_back(msg);
+	//	return true;
+	//}
 	int m1_w = m1->W();
 	int m1_x = m1->X();
 	int m2_w = m2->W();
 	int m2_x = m2->X();
+	//how many seconds from now will the END of m1 reach x=0?
+	//p=p0+v*t--> 0=(m1_x+m1_w)-v1*t--> v1*t = m1_x+m1_w--> t=(m1_x+m1_w)/v1
+	float t1=(m1_x+m1_w)/v1;
+	//how many seconds from now will the front of m2 reach x=0?
+	//p=p0+v*t--> 0=(m2_x)-v2*t--> v2*t = m2_x--> t=m2_x/v2
+	float t2=(m2_x)/v2;
 
-
-	if(!m_messages.empty())
-	{
+	if(t2<t1) {
 		return false;
 	}
-	*/
+
 	//add this msg to the lane and return 'true' to indicate it's added
 	msg->Y(m_y);
 	m_messages.push_back(msg);

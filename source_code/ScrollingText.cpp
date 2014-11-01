@@ -13,7 +13,12 @@ ScrollingTextManager::ScrollingTextManager() {
 }
 
 ScrollingTextManager::~ScrollingTextManager() {
-	//ClearAllMessages();
+	for(std::map<std::wstring, ScrollingText*>::iterator i = m_text.begin();
+		i!=m_text.end();++i)
+	{
+		delete i->second;
+	}
+	m_text.clear();
 	//CloseHandle(m_mutex);
 }
 
@@ -87,7 +92,7 @@ void ScrollingTextManager::Render(HDC hdc)
 	for(std::map<std::wstring, ScrollingText*>::iterator i = m_text.begin();
 		i!=m_text.end(); ++i)
 	{
-		Gdiplus::RectF origin(0,0,848.0, 480.0);
+		Gdiplus::RectF origin(0,0,848.0*4.0, 480.0);
 		if(i->second->W()<0 || i->second->H()<0) {
 			Gdiplus::RectF bb;
 			//graphics.MeasureString(i->second->Text().c_str(), -1, &font, origin,&strformat, &bb);
