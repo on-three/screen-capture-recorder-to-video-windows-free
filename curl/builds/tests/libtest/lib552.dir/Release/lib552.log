@@ -1,0 +1,28 @@
+﻿Build started 10/15/2014 8:08:39 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib552.vcxproj" on node 5 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "lib552.dir\Release\Test lib552.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/libtest/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\libtest\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D LIB552 /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"lib552.dir\Release\\" /Fd"lib552.dir\Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\tests\libtest\lib552.c ..\..\..\tests\libtest\first.c ..\..\..\lib\warnless.c
+         lib552.c
+         first.c
+         warnless.c
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib552.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Release\libcurl_imp.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"lib552.dir\Release\lib552.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Release/lib552.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Release/lib552.lib" /MACHINE:X86 lib552.dir\Release\lib552.obj
+         lib552.dir\Release\first.obj
+         lib552.dir\Release\warnless.obj  /machine:X86 
+         lib552.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib552.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib552.exe;#1" /manifest lib552.dir\Release\lib552.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "lib552.dir\Release\Test lib552.unsuccessfulbuild".
+         Touching "lib552.dir\Release\Test lib552.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib552.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.06

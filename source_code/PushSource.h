@@ -5,8 +5,16 @@
 //
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 //------------------------------------------------------------------------------
-
+//#pragma once
 #include <strsafe.h>
+#include <string>
+#include <time.h>
+
+//#include "stubserver.h"
+#include "MsgPresentationInterface.h"
+#include "StaticText.h"
+#include "ScrollingText.h"
+#include "NicoNicoDisplay.h"
 
 /*
 // UNITS = 10 ^ 7  
@@ -26,6 +34,7 @@ const REFERENCE_TIME FPS_1  = UNITS / 1;
 // Filter name strings
 #define g_wszPushDesktop    L"PushSource Desktop Filter"
 
+class MyStubServer;
 class CPushPinDesktop;
 
 // parent
@@ -65,12 +74,29 @@ public:
 
 
 // child
-class CPushPinDesktop : public CSourceStream, public IAMStreamConfig, public IKsPropertySet //CSourceStream is ... CBasePin
+class CPushPinDesktop : public MsgPresentationInterface, public CSourceStream, public IAMStreamConfig, public IKsPropertySet //CSourceStream is ... CBasePin
 {
 
 public:
     int m_iFrameNumber;
 
+public:
+	//std::wstring notify(const std::wstring& msg);
+	void process(const std::wstring& msg);
+	std::string StaticMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y, const float lifetime);
+	std::string RemoveStaticMessage(const std::wstring& name);
+
+	std::string RemoveScrollingMessage(const std::wstring& name);
+	std::string ScrollingMessage(const std::wstring& msg,
+		const std::wstring& name,
+		const int& repetitions,
+		const float& scroll_time,
+		const int& y);
+	std::string ClearAll(const int& arg);
+	std::string AddNicoNicoMsg(const std::wstring& msg);
 protected:
 
     //int m_FramesWritten;				// To track where we are
@@ -95,6 +121,11 @@ protected:
 	HBITMAP     hRawBitmap;
 
 	ULONG_PTR m_gdiplusToken;
+	clock_t tPrev;
+	MyStubServer* m_jsonrpcServer;
+	StaticTextManager m_staticText;
+	ScrollingTextManager m_scrollingText;
+	NicoNico::DisplayManager m_nicoNicoDisplay;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 
@@ -105,6 +136,7 @@ protected:
 	//int m_iScreenBitDepth;
 
 	float GetFps();
+	void OnPaint(HDC hdc);
 
 	boolean m_bReReadRegistry;
 	boolean m_bDeDupe;

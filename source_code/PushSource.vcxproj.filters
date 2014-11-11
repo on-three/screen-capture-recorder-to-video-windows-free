@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{61a25d3f-932b-4c51-aeb3-14a455e57a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Overlay">
+      <UniqueIdentifier>{3971d2b6-960f-44d0-88c7-710857b7417a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Overlay">
+      <UniqueIdentifier>{2440de99-4d17-4e0e-a583-6289c09926fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DibHelper.cpp">
@@ -30,10 +39,28 @@
     <ClCompile Include="parent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stubserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticText.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollingText.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="MutexLock.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="NicoNicoDisplay.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="PushSource.def">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="spec.json">
+      <Filter>json</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +72,27 @@
     </ClInclude>
     <ClInclude Include="PushSource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stubserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractmystubserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgPresentationInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticText.h">
+      <Filter>Header Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollingText.h">
+      <Filter>Header Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="MutexLock.h">
+      <Filter>Header Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="NicoNicoDisplay.h">
+      <Filter>Header Files\Overlay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

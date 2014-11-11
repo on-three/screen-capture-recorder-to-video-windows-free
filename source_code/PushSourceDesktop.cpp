@@ -13,6 +13,8 @@
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 
+#include "stubserver.h"
+
 
 #define MIN(a,b)  ((a) < (b) ? (a) : (b))  // danger! can evaluate "a" twice.
 
@@ -27,6 +29,53 @@ long sumMillisTook = 0;
   int show_performance = 0;
 #endif
 
+void CPushPinDesktop::process(const std::wstring& msg)
+{
+	//m_text = S;
+	//return std::wstring(TEXT("ROGER"));
+}
+
+std::string CPushPinDesktop::StaticMessage(const int& h, 
+		const std::wstring& msg, 
+		const std::wstring& name, 
+		const int& w, const int& x, const int& y, const float lifetime)
+{
+	m_staticText.AddMessage(msg, name, x, y, w, h, lifetime);
+	return std::string("SUCCESS");
+}
+
+std::string CPushPinDesktop::RemoveStaticMessage(const std::wstring& name) {
+	m_staticText.RemoveMessage(name);
+	return std::string("SUCCESS");
+}
+
+std::string CPushPinDesktop::RemoveScrollingMessage(const std::wstring& name)
+{
+	m_scrollingText.RemoveMessage(name);
+	return std::string("SUCCESS");
+}
+std::string CPushPinDesktop::ScrollingMessage(const std::wstring& msg,
+		const std::wstring& name,
+		const int& repetitions,
+		const float& scroll_time,
+		const int& y)
+{
+	m_scrollingText.AddMessage(msg, name, repetitions, scroll_time, y);
+	return std::string("SUCCESS");
+}
+
+std::string CPushPinDesktop::ClearAll(const int& arg) {
+	m_staticText.ClearAllMessages();
+	m_scrollingText.ClearAllMessages();
+	m_nicoNicoDisplay.ClearAllMessages();
+	return std::string("success");
+}
+
+std::string CPushPinDesktop::AddNicoNicoMsg(const std::wstring& msg) {
+	m_nicoNicoDisplay.AddMessage(msg,msg,1,10.0f,100);
+	return std::string("success");
+}
+
 // the default child constructor...
 CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
         : CSourceStream(NAME("Push Source CPushPinDesktop child/pin"), phr, pFilter, L"Capture"),
@@ -40,6 +89,9 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 		hRawBitmap(NULL),
 		m_bUseCaptureBlt(false),
 		previousFrameEndTime(0)
+		//,m_text(std::wstring(TEXT("TESTING"),100,100,100,100))
+		,m_jsonrpcServer(new MyStubServer(this))
+		,tPrev(0)
 {
 	// Get the device context of the main display, just to get some metrics for it...
 	globalStart = GetTickCount();
@@ -47,6 +99,8 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 	// Initialize GDI+
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
 	Gdiplus::GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
+
+	m_jsonrpcServer->StartListening();
 
 	m_iHwndToTrack = (HWND) read_config_setting(TEXT("hwnd_to_track"), NULL, false);
 	if(m_iHwndToTrack) {
@@ -332,22 +386,24 @@ CPushPinDesktop::~CPushPinDesktop()
 	}
 
 	Gdiplus::GdiplusShutdown(m_gdiplusToken);
+	m_jsonrpcServer->StopListening();
+	delete m_jsonrpcServer;
 }
 
-void OnPaint(HDC hdc)
+void CPushPinDesktop::OnPaint(HDC hdc)
 {
-   
-	Graphics graphics(hdc);
-	Pen      pen(Color(255, 0, 0, 255));
-	graphics.DrawLine(&pen, 0, 0, 200, 100);
-
-	LinearGradientBrush myBrush(Rect(0,0,100,100),Color::Red, Color::Yellow, LinearGradientMode::LinearGradientModeHorizontal);
-	Font myFont(L"Times new roman", 24);
-	RectF rect = RectF(50,50,300,300);
-	graphics.DrawString(TEXT("Hello #/jp/shows...!"),-1, &myFont,rect,&StringFormat(0,0), &myBrush);
-	//const wchar_t* msg = L"Hello #/jp/shows...";
-	//TextOut(hdc,100,100, msg,wcslen(msg) );
-
+	const clock_t now = clock();
+	if(tPrev==0.0f){tPrev=now;}
+	float dt = static_cast<float>( now - tPrev ) /  CLOCKS_PER_SEC;
+	tPrev = now;
+	int width = GetDeviceCaps(hdc, HORZRES);
+	int height = GetDeviceCaps(hdc,VERTRES);
+	m_staticText.Update(dt, width, height);
+	m_staticText.Render(hdc);
+	m_scrollingText.Update(dt, width, height);
+	m_scrollingText.Render(hdc);
+	m_nicoNicoDisplay.Update(dt, width, height);
+	m_nicoNicoDisplay.Render(hdc);
 }
 
 void CPushPinDesktop::CopyScreenToDataBlock(HDC hScrDC, BYTE *pData, BITMAPINFO *pHeader, IMediaSample *pSample)

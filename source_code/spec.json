@@ -1,0 +1,55 @@
+[
+    {
+        "method": "StaticMessage",
+        "params": {
+            "msg": "Hello.",
+			"name" : "1",
+			"x" : 0,
+			"y" : 0,
+			"w" : 100,
+			"h" : 100,
+			"lifetime" : 0.0
+        },
+        "returns": "Success"
+    },
+	{
+        "method": "RemoveStaticMessage",
+        "params": {
+            "name" : "1"
+        },
+        "returns": "Success"
+    },
+	{
+        "method": "ScrollingMessage",
+        "params": {
+            "msg": "Hello.",
+			"name" : "1",
+			"y" : 0,
+			"scroll_time" : 6.0,
+			"repetitions" : 0
+        },
+        "returns": "Success"
+    },
+	{
+        "method": "RemoveScrollingMessage",
+        "params": {
+            "name" : "1"
+        },
+        "returns": "Success"
+    },
+		{
+        "method": "ClearAll",
+        "params": {
+            "arg" : 0
+        },
+        "returns": "Success"
+    },
+	{
+        "method": "AddNicoNicoMsg",
+        "params": {
+            "msg" : "message"
+        },
+        "returns": "Success"
+    }
+
+]

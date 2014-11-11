@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/cygwin/home/onthree/code/curl/lib/CMakeLists.txt
+C:/cygwin/home/onthree/code/curl/include/curl/curlbuild.h.cmake
+C:/cygwin/home/onthree/code/curl/lib/curl_config.h.cmake
+C:/cygwin/home/onthree/code/curl/builds/lib/Makefile.inc.cmake

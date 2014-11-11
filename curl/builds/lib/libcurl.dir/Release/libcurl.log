@@ -1,0 +1,262 @@
+﻿Build started 10/18/2014 9:47:52 AM.
+     1>Project "C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\lib\libcurl.vcxproj" on node 2 (rebuild target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(299,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>InitializeBuildStatus:
+         Creating "libcurl.dir\Release\libcurl.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/lib/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\lib\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\builds\lib\..\include /IC:\cygwin\home\onthree\code\curl\lib\.. /IC:\cygwin\home\onthree\code\curl\lib\..\include /IC:\cygwin\home\onthree\code\curl\builds\lib\.. /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D BUILDING_LIBCURL /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _USRDLL /D "CMAKE_INTDIR=\"Release\"" /D libcurl_EXPORTS /D _WINDLL /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"libcurl.dir\Release\\" /Fd"libcurl.dir\Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\lib\file.c ..\..\lib\timeval.c ..\..\lib\base64.c ..\..\lib\hostip.c ..\..\lib\progress.c ..\..\lib\formdata.c ..\..\lib\cookie.c ..\..\lib\http.c ..\..\lib\sendf.c ..\..\lib\ftp.c ..\..\lib\url.c ..\..\lib\dict.c ..\..\lib\if2ip.c ..\..\lib\speedcheck.c ..\..\lib\ldap.c ..\..\lib\version.c ..\..\lib\getenv.c ..\..\lib\escape.c ..\..\lib\mprintf.c ..\..\lib\telnet.c ..\..\lib\netrc.c ..\..\lib\getinfo.c ..\..\lib\transfer.c ..\..\lib\strequal.c ..\..\lib\easy.c ..\..\lib\security.c ..\..\lib\curl_fnmatch.c ..\..\lib\fileinfo.c ..\..\lib\ftplistparser.c ..\..\lib\wildcard.c ..\..\lib\krb5.c ..\..\lib\memdebug.c ..\..\lib\http_chunks.c ..\..\lib\strtok.c ..\..\lib\connect.c ..\..\lib\llist.c ..\..\lib\hash.c ..\..\lib\multi.c ..\..\lib\content_encoding.c ..\..\lib\share.c ..\..\lib\http_digest.c ..\..\lib\md4.c ..\..\lib\md5.c ..\..\lib\http_negotiate.c ..\..\lib\inet_pton.c ..\..\lib\strtoofft.c ..\..\lib\strerror.c ..\..\lib\amigaos.c ..\..\lib\hostasyn.c ..\..\lib\hostip4.c ..\..\lib\hostip6.c ..\..\lib\hostsyn.c ..\..\lib\inet_ntop.c ..\..\lib\parsedate.c ..\..\lib\select.c ..\..\lib\tftp.c ..\..\lib\splay.c ..\..\lib\strdup.c ..\..\lib\socks.c ..\..\lib\ssh.c ..\..\lib\rawstr.c ..\..\lib\curl_addrinfo.c ..\..\lib\socks_gssapi.c ..\..\lib\socks_sspi.c ..\..\lib\curl_sspi.c ..\..\lib\slist.c ..\..\lib\nonblock.c ..\..\lib\curl_memrchr.c ..\..\lib\imap.c ..\..\lib\pop3.c ..\..\lib\smtp.c ..\..\lib\pingpong.c ..\..\lib\rtsp.c ..\..\lib\curl_threads.c ..\..\lib\warnless.c ..\..\lib\hmac.c ..\..\lib\curl_rtmp.c ..\..\lib\openldap.c ..\..\lib\curl_gethostname.c ..\..\lib\gopher.c ..\..\lib\idn_win32.c ..\..\lib\http_negotiate_sspi.c ..\..\lib\http_proxy.c "..\..\lib\non-ascii.c" "..\..\lib\asyn-ares.c" "..\..\lib\asyn-thread.c" ..\..\lib\curl_gssapi.c ..\..\lib\curl_ntlm.c ..\..\lib\curl_ntlm_wb.c ..\..\lib\curl_ntlm_core.c ..\..\lib\curl_ntlm_msgs.c ..\..\lib\curl_sasl.c ..\..\lib\curl_multibyte.c ..\..\lib\hostcheck.c ..\..\lib\bundles.c ..\..\lib\conncache.c ..\..\lib\pipeline.c ..\..\lib\dotdot.c ..\..\lib\x509asn1.c ..\..\lib\http2.c ..\..\lib\curl_sasl_sspi.c ..\..\lib\vtls\openssl.c ..\..\lib\vtls\gtls.c ..\..\lib\vtls\vtls.c ..\..\lib\vtls\nss.c ..\..\lib\vtls\polarssl.c ..\..\lib\vtls\polarssl_threadlock.c ..\..\lib\vtls\axtls.c ..\..\lib\vtls\cyassl.c ..\..\lib\vtls\curl_schannel.c ..\..\lib\vtls\curl_darwinssl.c ..\..\lib\vtls\gskit.c
+         file.c
+     1>..\..\lib\file.c(551): warning C4244: 'function' : conversion from 'curl_off_t' to 'long', possible loss of data
+         timeval.c
+         base64.c
+         hostip.c
+         progress.c
+         formdata.c
+         cookie.c
+         http.c
+         sendf.c
+         ftp.c
+         url.c
+         dict.c
+         if2ip.c
+         speedcheck.c
+         ldap.c
+         version.c
+         getenv.c
+         escape.c
+         mprintf.c
+         telnet.c
+         Generating Code...
+         Compiling...
+         netrc.c
+         getinfo.c
+         transfer.c
+         strequal.c
+         easy.c
+         security.c
+         curl_fnmatch.c
+         fileinfo.c
+         ftplistparser.c
+         wildcard.c
+         krb5.c
+         memdebug.c
+         http_chunks.c
+         strtok.c
+         connect.c
+         llist.c
+         hash.c
+         multi.c
+         content_encoding.c
+         share.c
+         Generating Code...
+         Compiling...
+         http_digest.c
+         md4.c
+         md5.c
+         http_negotiate.c
+         inet_pton.c
+         strtoofft.c
+         strerror.c
+         amigaos.c
+         hostasyn.c
+         hostip4.c
+         hostip6.c
+         hostsyn.c
+         inet_ntop.c
+         parsedate.c
+         select.c
+         tftp.c
+         splay.c
+         strdup.c
+         socks.c
+         ssh.c
+         Generating Code...
+         Compiling...
+         rawstr.c
+         curl_addrinfo.c
+         socks_gssapi.c
+         socks_sspi.c
+         curl_sspi.c
+         slist.c
+         nonblock.c
+         curl_memrchr.c
+         imap.c
+         pop3.c
+         smtp.c
+         pingpong.c
+         rtsp.c
+         curl_threads.c
+         warnless.c
+         hmac.c
+         curl_rtmp.c
+         openldap.c
+         curl_gethostname.c
+         gopher.c
+         Generating Code...
+         Compiling...
+         idn_win32.c
+         http_negotiate_sspi.c
+         http_proxy.c
+         non-ascii.c
+         asyn-ares.c
+         asyn-thread.c
+         curl_gssapi.c
+         curl_ntlm.c
+         curl_ntlm_wb.c
+         curl_ntlm_core.c
+         curl_ntlm_msgs.c
+         curl_sasl.c
+         curl_multibyte.c
+         hostcheck.c
+         bundles.c
+         conncache.c
+         pipeline.c
+         dotdot.c
+         x509asn1.c
+         http2.c
+         Generating Code...
+         Compiling...
+         curl_sasl_sspi.c
+         openssl.c
+         gtls.c
+         vtls.c
+         nss.c
+         polarssl.c
+         polarssl_threadlock.c
+         axtls.c
+         cyassl.c
+         curl_schannel.c
+         curl_darwinssl.c
+         gskit.c
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D WIN32 /D _WINDOWS /D NDEBUG /D BUILDING_LIBCURL /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D _USRDLL /D "CMAKE_INTDIR=\\\"Release\\\"" /D libcurl_EXPORTS /l"0x0409" /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\builds\lib\..\include /IC:\cygwin\home\onthree\code\curl\lib\.. /IC:\cygwin\home\onthree\code\curl\lib\..\include /IC:\cygwin\home\onthree\code\curl\builds\lib\.. /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /nologo /fo"libcurl.dir\Release\libcurl.res" ..\..\lib\libcurl.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\lib\Release\libcurl.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"libcurl.dir\Release\libcurl.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:/cygwin/home/onthree/code/curl/builds/lib/Release/libcurl.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/lib/Release/libcurl_imp.lib" /MACHINE:X86 /DLL libcurl.dir\Release\libcurl.res
+         libcurl.dir\Release\file.obj
+         libcurl.dir\Release\timeval.obj
+         libcurl.dir\Release\base64.obj
+         libcurl.dir\Release\hostip.obj
+         libcurl.dir\Release\progress.obj
+         libcurl.dir\Release\formdata.obj
+         libcurl.dir\Release\cookie.obj
+         libcurl.dir\Release\http.obj
+         libcurl.dir\Release\sendf.obj
+         libcurl.dir\Release\ftp.obj
+         libcurl.dir\Release\url.obj
+         libcurl.dir\Release\dict.obj
+         libcurl.dir\Release\if2ip.obj
+         libcurl.dir\Release\speedcheck.obj
+         libcurl.dir\Release\ldap.obj
+         libcurl.dir\Release\version.obj
+         libcurl.dir\Release\getenv.obj
+         libcurl.dir\Release\escape.obj
+         libcurl.dir\Release\mprintf.obj
+         libcurl.dir\Release\telnet.obj
+         libcurl.dir\Release\netrc.obj
+         libcurl.dir\Release\getinfo.obj
+         libcurl.dir\Release\transfer.obj
+         libcurl.dir\Release\strequal.obj
+         libcurl.dir\Release\easy.obj
+         libcurl.dir\Release\security.obj
+         libcurl.dir\Release\curl_fnmatch.obj
+         libcurl.dir\Release\fileinfo.obj
+         libcurl.dir\Release\ftplistparser.obj
+         libcurl.dir\Release\wildcard.obj
+         libcurl.dir\Release\krb5.obj
+         libcurl.dir\Release\memdebug.obj
+         libcurl.dir\Release\http_chunks.obj
+         libcurl.dir\Release\strtok.obj
+         libcurl.dir\Release\connect.obj
+         libcurl.dir\Release\llist.obj
+         libcurl.dir\Release\hash.obj
+         libcurl.dir\Release\multi.obj
+         libcurl.dir\Release\content_encoding.obj
+         libcurl.dir\Release\share.obj
+         libcurl.dir\Release\http_digest.obj
+         libcurl.dir\Release\md4.obj
+         libcurl.dir\Release\md5.obj
+         libcurl.dir\Release\http_negotiate.obj
+         libcurl.dir\Release\inet_pton.obj
+         libcurl.dir\Release\strtoofft.obj
+         libcurl.dir\Release\strerror.obj
+         libcurl.dir\Release\amigaos.obj
+         libcurl.dir\Release\hostasyn.obj
+         libcurl.dir\Release\hostip4.obj
+         libcurl.dir\Release\hostip6.obj
+         libcurl.dir\Release\hostsyn.obj
+         libcurl.dir\Release\inet_ntop.obj
+         libcurl.dir\Release\parsedate.obj
+         libcurl.dir\Release\select.obj
+         libcurl.dir\Release\tftp.obj
+         libcurl.dir\Release\splay.obj
+         libcurl.dir\Release\strdup.obj
+         libcurl.dir\Release\socks.obj
+         libcurl.dir\Release\ssh.obj
+         libcurl.dir\Release\rawstr.obj
+         libcurl.dir\Release\curl_addrinfo.obj
+         libcurl.dir\Release\socks_gssapi.obj
+         libcurl.dir\Release\socks_sspi.obj
+         libcurl.dir\Release\curl_sspi.obj
+         libcurl.dir\Release\slist.obj
+         libcurl.dir\Release\nonblock.obj
+         libcurl.dir\Release\curl_memrchr.obj
+         libcurl.dir\Release\imap.obj
+         libcurl.dir\Release\pop3.obj
+         libcurl.dir\Release\smtp.obj
+         libcurl.dir\Release\pingpong.obj
+         libcurl.dir\Release\rtsp.obj
+         libcurl.dir\Release\curl_threads.obj
+         libcurl.dir\Release\warnless.obj
+         libcurl.dir\Release\hmac.obj
+         libcurl.dir\Release\curl_rtmp.obj
+         libcurl.dir\Release\openldap.obj
+         libcurl.dir\Release\curl_gethostname.obj
+         libcurl.dir\Release\gopher.obj
+         libcurl.dir\Release\idn_win32.obj
+         libcurl.dir\Release\http_negotiate_sspi.obj
+         libcurl.dir\Release\http_proxy.obj
+         "libcurl.dir\Release\non-ascii.obj"
+         "libcurl.dir\Release\asyn-ares.obj"
+         "libcurl.dir\Release\asyn-thread.obj"
+         libcurl.dir\Release\curl_gssapi.obj
+         libcurl.dir\Release\curl_ntlm.obj
+         libcurl.dir\Release\curl_ntlm_wb.obj
+         libcurl.dir\Release\curl_ntlm_core.obj
+         libcurl.dir\Release\curl_ntlm_msgs.obj
+         libcurl.dir\Release\curl_sasl.obj
+         libcurl.dir\Release\curl_multibyte.obj
+         libcurl.dir\Release\hostcheck.obj
+         libcurl.dir\Release\bundles.obj
+         libcurl.dir\Release\conncache.obj
+         libcurl.dir\Release\pipeline.obj
+         libcurl.dir\Release\dotdot.obj
+         libcurl.dir\Release\x509asn1.obj
+         libcurl.dir\Release\http2.obj
+         libcurl.dir\Release\curl_sasl_sspi.obj
+         libcurl.dir\Release\openssl.obj
+         libcurl.dir\Release\gtls.obj
+         libcurl.dir\Release\vtls.obj
+         libcurl.dir\Release\nss.obj
+         libcurl.dir\Release\polarssl.obj
+         libcurl.dir\Release\polarssl_threadlock.obj
+         libcurl.dir\Release\axtls.obj
+         libcurl.dir\Release\cyassl.obj
+         libcurl.dir\Release\curl_schannel.obj
+         libcurl.dir\Release\curl_darwinssl.obj
+         libcurl.dir\Release\gskit.obj  /machine:X86 
+            Creating library C:/cygwin/home/onthree/code/curl/builds/lib/Release/libcurl_imp.lib and object C:/cygwin/home/onthree/code/curl/builds/lib/Release/libcurl_imp.exp
+         libcurl.vcxproj -> C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\lib\Release\libcurl.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\lib\Release\libcurl.dll;#2" /manifest libcurl.dir\Release\libcurl.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "libcurl.dir\Release\libcurl.unsuccessfulbuild".
+         Touching "libcurl.dir\Release\libcurl.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\screen-capture-recorder-to-video-windows-free\curl\builds\lib\libcurl.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:13.72

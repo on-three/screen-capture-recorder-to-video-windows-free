@@ -1,0 +1,26 @@
+﻿Build started 10/15/2014 8:08:38 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib556.vcxproj" on node 2 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "lib556.dir\Release\Test lib556.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/libtest/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\libtest\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D LIB556 /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"lib556.dir\Release\\" /Fd"lib556.dir\Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\tests\libtest\lib556.c ..\..\..\tests\libtest\first.c
+         lib556.c
+         first.c
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib556.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Release\libcurl_imp.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"lib556.dir\Release\lib556.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Release/lib556.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/libtest/Release/lib556.lib" /MACHINE:X86 lib556.dir\Release\lib556.obj
+         lib556.dir\Release\first.obj  /machine:X86 
+         lib556.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib556.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\cygwin\home\onthree\code\curl\builds\tests\libtest\Release\lib556.exe;#1" /manifest lib556.dir\Release\lib556.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "lib556.dir\Release\Test lib556.unsuccessfulbuild".
+         Touching "lib556.dir\Release\Test lib556.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\libtest\lib556.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.16

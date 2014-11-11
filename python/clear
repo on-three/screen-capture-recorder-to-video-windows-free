@@ -1,0 +1,65 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: set ts=2 expandtab:
+'''
+Module: json_rpc_client_test.py
+Desc: make json rpc calls on C++ video overlay pipeline
+Author: on_three
+Email: on.three.email@gmail.com
+DATE: Sunday, June 1st 2014
+
+python test to make json rpc calls on video overlay pipeline.
+
+[
+        "method": "ScrollingMessage",
+        "params": {
+            "msg": "Hello.",
+			"name" : "1",
+			"y" : 0,
+			"scroll_time" : 6.0,
+			"repetitions" : 0
+        },
+        "returns": "Success"
+]
+  
+'''
+
+import pyjsonrpc
+import argparse
+
+def main():
+  parser = argparse.ArgumentParser(description='Control scrolling messages via json rpc messages.')
+  #parser.add_argument('message', help='Test to display on video stream', type=str, nargs='?', default=None)
+  parser.add_argument('--hostname', help='server hostname in form "http://hostname:port"', default='http://localhost:8080')
+  parser.add_argument('-y', help='y pos of message on screen in pixels', type=int, default=100)
+  parser.add_argument('-n', '--name', help='Friendly name to remove/change this message later.', type=str, default='1')
+  parser.add_argument('-c', '--cycles', help='Number of times message is scrolled. Zero is forever.', type=int, default=0)
+  parser.add_argument('-t', '--time', help='Time to scroll across screen once.', type=float, default=10.0)
+  parser.add_argument('-r', '--remove', help='Remove message specified by -n (name) parameter', action='store_true')
+  args = parser.parse_args()
+
+  http_client = pyjsonrpc.HttpClient(
+    url = args.hostname, #'http://localhost:8080',
+    #username = 'Username',
+    #password = 'Password',
+  )
+
+  #msg = args.message
+  y = args.y
+  repetitions = args.cycles
+  scroll_time = args.time
+  name = args.name
+  arg = 0
+  response = http_client.ClearAll(arg=arg)
+  #if args.remove:
+  #  response = http_client.RemoveScrollingMessage(name=name)
+  #elif msg:
+  #  response = http_client.ScrollingMessage(msg=msg, name=name, y=y, repetitions=repetitions, scroll_time=scroll_time)
+
+  print('Response from server: {r}'.format(r=response))
+  
+  print('Shutting down now')
+    
+
+if __name__ == "__main__":
+  main()

@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{8889196A-9F03-4241-915F-C26DD5D14B8C}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\cygwin\home\onthree\code\curl\builds\include\curl;C:\cygwin\home\onthree\code\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\cygwin\home\onthree\code\curl\builds\include\curl;C:\cygwin\home\onthree\code\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\cygwin\home\onthree\code\curl\builds\include\curl;C:\cygwin\home\onthree\code\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\cygwin\home\onthree\code\curl\builds\include\curl;C:\cygwin\home\onthree\code\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/cygwin/home/onthree/code/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/cygwin/home/onthree/code/curl -BC:/cygwin/home/onthree/code/curl/builds --check-stamp-file C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/cygwin/home/onthree/code/curl/CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMake\Utilities.cmake;C:\cygwin\home\onthree\code\curl\CMake\Macros.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystem.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompilerABI.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckStructHasMember.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\Platforms\WindowsCache.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindOpenSSL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\cygwin\home\onthree\code\curl\CMake\FindLibSSH2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\CURL_SIZEOF_CURL_SOCKLEN_T.c;C:\cygwin\home\onthree\code\curl\CMake\OtherTests.cmake;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceRuns.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/cygwin/home/onthree/code/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/cygwin/home/onthree/code/curl -BC:/cygwin/home/onthree/code/curl/builds --check-stamp-file C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/cygwin/home/onthree/code/curl/CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMake\Utilities.cmake;C:\cygwin\home\onthree\code\curl\CMake\Macros.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystem.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompilerABI.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckStructHasMember.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\Platforms\WindowsCache.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindOpenSSL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\cygwin\home\onthree\code\curl\CMake\FindLibSSH2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\CURL_SIZEOF_CURL_SOCKLEN_T.c;C:\cygwin\home\onthree\code\curl\CMake\OtherTests.cmake;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceRuns.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/cygwin/home/onthree/code/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/cygwin/home/onthree/code/curl -BC:/cygwin/home/onthree/code/curl/builds --check-stamp-file C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/cygwin/home/onthree/code/curl/CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMake\Utilities.cmake;C:\cygwin\home\onthree\code\curl\CMake\Macros.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystem.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompilerABI.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckStructHasMember.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\Platforms\WindowsCache.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindOpenSSL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\cygwin\home\onthree\code\curl\CMake\FindLibSSH2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\CURL_SIZEOF_CURL_SOCKLEN_T.c;C:\cygwin\home\onthree\code\curl\CMake\OtherTests.cmake;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceRuns.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/cygwin/home/onthree/code/curl/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HC:/cygwin/home/onthree/code/curl -BC:/cygwin/home/onthree/code/curl/builds --check-stamp-file C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/cygwin/home/onthree/code/curl/CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;C:\cygwin\home\onthree\code\curl\CMake\Utilities.cmake;C:\cygwin\home\onthree\code\curl\CMake\Macros.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystem.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeFindBinUtils.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeClDeps.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompilerABI.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeCCompiler.cmake.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\3.0.2\CMakeCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckStructHasMember.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFiles.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckSymbolExists.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\Platforms\WindowsCache.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindOpenSSL.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\SelectLibraryConfigurations.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindZLIB.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\cygwin\home\onthree\code\curl\CMake\FindLibSSH2.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeParseArguments.cmake;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckIncludeFile.c.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SSIZE_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_LONG.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SHORT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_INT.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF___INT64.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_TIME_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckFunctionExists.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\cygwin\home\onthree\code\curl\CMake\CurlTests.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_CURL_OFF_T.c;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\CURL_SIZEOF_CURL_SOCKLEN_T.c;C:\cygwin\home\onthree\code\curl\CMake\OtherTests.cmake;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceCompiles.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\cygwin\home\onthree\code\curl\CMake\CurlCheckCSourceRuns.cmake;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_SIG_ATOMIC_T.c;C:\cygwin\home\onthree\code\curl\CMake\CMakeConfigurableFile.in;C:\Program Files (x86)\CMake\share\cmake-3.0\Modules\CheckTypeSize.c.in;C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\CheckTypeSize\SIZEOF_STRUCT_SOCKADDR_STORAGE.c;C:\cygwin\home\onthree\code\curl\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeFiles\a0b63b6b1249bee1c09b9f7b099d6e1a\ALL_BUILD.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/cygwin/home/onthree/code/curl/builds/CMakeFiles/a0b63b6b1249bee1c09b9f7b099d6e1a/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\ALL_BUILD</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/cygwin/home/onthree/code/curl/builds/CMakeFiles/a0b63b6b1249bee1c09b9f7b099d6e1a/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\ALL_BUILD</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/cygwin/home/onthree/code/curl/builds/CMakeFiles/a0b63b6b1249bee1c09b9f7b099d6e1a/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\ALL_BUILD</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Build all projects</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/cygwin/home/onthree/code/curl/builds/CMakeFiles/a0b63b6b1249bee1c09b9f7b099d6e1a/ALL_BUILD.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\cygwin\home\onthree\code\curl\builds\CMakeFiles\ALL_BUILD</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMakeFiles\ALL_BUILD" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/ZERO_CHECK.vcxproj">
+      <Project>37B2644E-3E86-44E8-B01C-2AF4BDEF3145</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/chkhostname.vcxproj">
+      <Project>8FACA74B-A526-4D57-9753-162E5C538978</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/src/curl.vcxproj">
+      <Project>C114385F-66F4-4258-A140-DAABBE45E425</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/fake_ntlm.vcxproj">
+      <Project>65DBA553-C644-4A21-9A1A-3424260DF9DE</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/getpart.vcxproj">
+      <Project>93599AC4-322F-402E-A0A9-A4E00A6B32A4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1500.vcxproj">
+      <Project>48B83A8C-2C82-4376-82BE-F02EB767C200</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1501.vcxproj">
+      <Project>51597058-81D2-449D-90BF-74447758F615</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1502.vcxproj">
+      <Project>2D608AE3-6F25-4F7D-90E8-6358D5B87AF5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1503.vcxproj">
+      <Project>A1746713-A2B7-45B3-A98E-2D6887B5C387</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1504.vcxproj">
+      <Project>46B2C9A1-D721-47DF-9505-68A1491DCE31</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1505.vcxproj">
+      <Project>C768D27F-950D-4F67-AACF-E29BA34E8DFA</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1506.vcxproj">
+      <Project>06CBBAE2-E52D-4C59-93B8-D5804A91E308</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1507.vcxproj">
+      <Project>B9C2CF3A-D8D1-4D10-A96B-CBABFD88F59E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1508.vcxproj">
+      <Project>2A163D60-5E2F-40DD-A87D-45F1520E0C56</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1509.vcxproj">
+      <Project>D03F19E3-0CB1-4257-ACB0-714F3BA320D5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1510.vcxproj">
+      <Project>8649238D-ED38-4181-99E8-191C099E6E24</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1511.vcxproj">
+      <Project>5EB5E75D-E9C5-4F38-9DBE-E6FAED4331CA</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1512.vcxproj">
+      <Project>99E04B37-E27B-4EB6-9028-7D8407B8B11A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1513.vcxproj">
+      <Project>E2811E83-8F59-4E9D-A9B9-77C6EE95BD57</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1514.vcxproj">
+      <Project>893644D1-47DA-4291-B6BE-5B2C2D8AB069</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1515.vcxproj">
+      <Project>C53F34EF-70BA-402C-93DF-D764A0ADD888</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1525.vcxproj">
+      <Project>61A92FC4-A7C5-49BE-9775-E157B2647DE6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1526.vcxproj">
+      <Project>3C859DF6-B2EF-4DA3-81D3-04D2D0D2186A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1527.vcxproj">
+      <Project>7190C647-EA09-4C6C-B91C-76B34A4275AD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1528.vcxproj">
+      <Project>8C5CAF5D-AC6A-47FF-9FD1-CE97338731BD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib1900.vcxproj">
+      <Project>85145185-9412-41E3-9AF9-8594C0D72F49</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib2033.vcxproj">
+      <Project>407B51AA-63CE-4193-9D7C-7E7EF1654FDF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib500.vcxproj">
+      <Project>DF9A5145-88DB-42DE-BDDC-B483BE9634EB</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib501.vcxproj">
+      <Project>CA28D353-5442-4881-B5F8-6F9A42B5C313</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib502.vcxproj">
+      <Project>B68F8986-1243-4DE0-8F30-ED279E222E7F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib503.vcxproj">
+      <Project>27E64CCE-E8DE-43F2-A703-A4E864652ED1</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib504.vcxproj">
+      <Project>15DC72AF-9DCD-4202-93F5-C92D69A7BBF8</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib505.vcxproj">
+      <Project>777740BD-9F8D-4FA1-B3B5-AE524791CB30</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib506.vcxproj">
+      <Project>B3BD6FBC-41DE-40F2-9F98-2809B50D4127</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib507.vcxproj">
+      <Project>0E73AE78-3513-46AE-9B86-D3E247821AA4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib508.vcxproj">
+      <Project>6CB285E0-4E8F-466F-B239-CDBF32302AB4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib509.vcxproj">
+      <Project>8A587668-066D-428B-A06D-B549B39EFE2E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib510.vcxproj">
+      <Project>20EF7FEC-5898-4392-9532-BA5D8F516D88</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib511.vcxproj">
+      <Project>04A460DB-AB5C-4E71-B308-6FF4F045CAB2</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib512.vcxproj">
+      <Project>44E4C145-3CCB-4FF1-80E8-3AAA30574EE9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib513.vcxproj">
+      <Project>53E4FDFD-5AC0-44A6-9481-F3A3E19CB744</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib514.vcxproj">
+      <Project>BA9011B3-4559-4B16-9454-56BDD93B5F36</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib515.vcxproj">
+      <Project>F1B4C6DF-BD2C-4CC2-B371-4F3F0F6220E2</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib516.vcxproj">
+      <Project>D50CD07F-44B6-487E-B2AA-05877FDCDB08</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib517.vcxproj">
+      <Project>C2A63D3A-F369-41FC-B788-2B61469285E9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib518.vcxproj">
+      <Project>514448F3-D983-4989-8324-FA7CE1B344F4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib519.vcxproj">
+      <Project>7027ADF7-FCEF-4383-BE3D-930FBE108A78</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib520.vcxproj">
+      <Project>B213C875-1361-45CD-8D36-A1702770BCA5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib521.vcxproj">
+      <Project>25305C85-F287-4D49-8B26-86122820542A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib523.vcxproj">
+      <Project>0F2F2978-5184-4C59-BC16-7FB11A4E9B53</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib524.vcxproj">
+      <Project>14955AEA-6108-4E86-BAC1-B58AC144C9F7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib525.vcxproj">
+      <Project>2F1BEC09-2354-4541-8E52-092F12DE467A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib526.vcxproj">
+      <Project>1E7DF3B7-CAEF-43BF-AA33-63BD3ECAFCA6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib527.vcxproj">
+      <Project>79506C20-DBFE-497C-9F1F-49EB589C9FE8</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib529.vcxproj">
+      <Project>684B8287-7A41-4FEC-AD42-55A8A7779EAE</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib530.vcxproj">
+      <Project>7FA0056C-C924-4249-B2EC-820E2B73DB5A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib532.vcxproj">
+      <Project>7AC5A1DC-227B-4A36-B4EC-64A91C6B933E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib533.vcxproj">
+      <Project>86652F90-54A4-4944-9C46-7723599C1C84</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib536.vcxproj">
+      <Project>85703525-3D1E-4DBA-B34C-6525AA3FDD33</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib537.vcxproj">
+      <Project>2F78E64A-F08D-48CF-AEEA-F68D866D7A38</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib539.vcxproj">
+      <Project>898B1563-7832-4F0D-A186-584CDB884FCA</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib540.vcxproj">
+      <Project>B97EF847-FC99-4F6D-84E8-61FB49B8E680</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib541.vcxproj">
+      <Project>368ADAF4-C234-4DC0-963E-73D8DF765992</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib542.vcxproj">
+      <Project>B6156BBE-BBC8-4DA5-A132-02EBAB785EFC</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib543.vcxproj">
+      <Project>0BF6D5F5-1989-4CA6-AAA7-D08B514676F0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib544.vcxproj">
+      <Project>8B989049-558E-4F35-9E02-D4A1CAA111DF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib545.vcxproj">
+      <Project>45AEC523-8731-4149-9205-CA6FDCC65355</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib547.vcxproj">
+      <Project>F88674A1-427F-46B5-9688-F844E96C90D7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib548.vcxproj">
+      <Project>C165A99D-C7F7-4CB3-9388-CA7A990DED89</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib549.vcxproj">
+      <Project>49F3039B-0DBD-43B0-8F84-35386E59260F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib552.vcxproj">
+      <Project>92D4B916-F15F-48B4-B4D7-FE2772237F47</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib553.vcxproj">
+      <Project>40225678-CF56-4F0B-ABC3-94F91759AE15</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib554.vcxproj">
+      <Project>D87B0B8A-64F7-4A98-8C61-F078A09F776A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib555.vcxproj">
+      <Project>3F371D7D-9909-46C6-8E4C-3735F2741258</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib556.vcxproj">
+      <Project>BC7F8137-AB6D-481B-B084-D1F024030076</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib557.vcxproj">
+      <Project>364B4E1F-FCE6-4CCF-9986-16DA0D31DA40</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib558.vcxproj">
+      <Project>6EC8BA44-3B65-4F82-B7C5-DB9BF13573ED</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib560.vcxproj">
+      <Project>7071AB30-6E6C-42AB-8C8C-9AC9E3CCCF2C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib562.vcxproj">
+      <Project>ABE7737F-2BB9-4A00-9A14-6D3B93A220BB</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib564.vcxproj">
+      <Project>A4026AED-4961-43AF-9BF5-8A4A88EB463A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib565.vcxproj">
+      <Project>F1390E8A-AE63-48E7-9D37-81B9E2773C85</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib566.vcxproj">
+      <Project>0D74F9B8-FDE9-4E82-98D6-C0271C663CF6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib567.vcxproj">
+      <Project>A70677FE-B6D1-4543-9F4B-48CAFE75E6AA</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib568.vcxproj">
+      <Project>9247282F-7F95-4D3F-8C6F-B9F3989FE6E9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib569.vcxproj">
+      <Project>E1A39ABF-EF54-424D-8987-DC38A85288D5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib570.vcxproj">
+      <Project>73300499-4D41-400D-BF90-108E42496D0F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib571.vcxproj">
+      <Project>94729B05-A8A0-4CE3-860F-E4426DFD0B4D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib572.vcxproj">
+      <Project>427BF7E3-C740-4112-95FC-A0117E4AF9F2</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib573.vcxproj">
+      <Project>81AE038F-3C8B-47FA-BED5-78201E1BFC18</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib574.vcxproj">
+      <Project>B428B234-E53C-410E-A97C-C62188CD1F1F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib575.vcxproj">
+      <Project>851843BE-3629-4BAB-BDDA-6DC4DBB8C45F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib576.vcxproj">
+      <Project>B3686044-4C73-4EFD-BF0A-6BB34793CE70</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib578.vcxproj">
+      <Project>48AE5BCB-9025-4786-B57B-F989B7200A5E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib579.vcxproj">
+      <Project>57330AEF-0553-442E-815B-CD30BB1A508A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib582.vcxproj">
+      <Project>E5BB4290-5363-400B-9485-3ACA7A23ACFB</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib583.vcxproj">
+      <Project>937663E7-349F-4E96-8405-B33A3046B442</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib585.vcxproj">
+      <Project>194DCF41-C891-4BBE-B9F1-C9AB1B4F2B15</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib586.vcxproj">
+      <Project>70FFF7AA-3935-4F4D-8331-57A86D116062</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib587.vcxproj">
+      <Project>7813BAA2-F8FC-4492-A402-FF228A48010B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib590.vcxproj">
+      <Project>8BD4967F-8874-427C-BC01-F0B6B9938D6B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib591.vcxproj">
+      <Project>040D8120-F8CE-4A81-8FA7-2DFA546BE7A6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib597.vcxproj">
+      <Project>F3F485A3-A692-4CCA-8E16-0E53782DDF2F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib598.vcxproj">
+      <Project>6752B862-5BAB-4F4F-B8D7-01766C2D07FC</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/lib599.vcxproj">
+      <Project>C12E169F-38D2-4520-AEEE-5E232CB735BD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/libauthretry.vcxproj">
+      <Project>316F1CD1-D857-4931-8293-CD2EEBA04369</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/lib/libcurl.vcxproj">
+      <Project>32B8659E-29C4-42E1-81CE-4950719B764D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/libtest/libntlmconnect.vcxproj">
+      <Project>B7FD9776-2B0F-4388-A086-DFDDD6044AFF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/resolve.vcxproj">
+      <Project>0072ECA0-E1F3-4F13-934A-A31A502198E3</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/rtspd.vcxproj">
+      <Project>100C4B81-4E38-4F1A-BACB-BFD70C9D030D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/sockfilt.vcxproj">
+      <Project>7FFEBD1E-FA03-4331-907E-5734F165E459</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/sws.vcxproj">
+      <Project>570DED31-F717-4CCB-997C-8A4F5ED87668</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/cygwin/home/onthree/code/curl/builds/tests/server/tftpd.vcxproj">
+      <Project>C678CF5D-D993-4E2C-A9D6-5E38CB16DBF2</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,61 @@
+﻿Build started 10/15/2014 8:06:10 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\server\fake_ntlm.vcxproj" on node 8 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "fake_ntlm.dir\Debug\Test server fake_ntlm.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/server/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\server\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D CURL_STATICLIB /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"fake_ntlm.dir\Debug\\" /Fd"fake_ntlm.dir\Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\mprintf.c ..\..\..\lib\nonblock.c ..\..\..\lib\strequal.c ..\..\..\lib\strtoofft.c ..\..\..\lib\timeval.c ..\..\..\lib\warnless.c ..\..\..\tests\server\getpart.c ..\..\..\lib\base64.c ..\..\..\lib\memdebug.c ..\..\..\tests\server\util.c ..\..\..\tests\server\fake_ntlm.c
+         mprintf.c
+         nonblock.c
+         strequal.c
+         strtoofft.c
+         timeval.c
+         warnless.c
+         getpart.c
+         base64.c
+         memdebug.c
+         util.c
+         fake_ntlm.c
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"fake_ntlm.dir\Debug\fake_ntlm.exe.embed.manifest.res" fake_ntlm.dir\Debug\fake_ntlm_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\fake_ntlm.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"fake_ntlm.dir\Debug\fake_ntlm.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/fake_ntlm.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/fake_ntlm.lib" /MACHINE:X86 fake_ntlm.dir\Debug\fake_ntlm.exe.embed.manifest.res
+         fake_ntlm.dir\Debug\mprintf.obj
+         fake_ntlm.dir\Debug\nonblock.obj
+         fake_ntlm.dir\Debug\strequal.obj
+         fake_ntlm.dir\Debug\strtoofft.obj
+         fake_ntlm.dir\Debug\timeval.obj
+         fake_ntlm.dir\Debug\warnless.obj
+         fake_ntlm.dir\Debug\getpart.obj
+         fake_ntlm.dir\Debug\base64.obj
+         fake_ntlm.dir\Debug\memdebug.obj
+         fake_ntlm.dir\Debug\util.obj
+         fake_ntlm.dir\Debug\fake_ntlm.obj  /machine:X86 /debug 
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"fake_ntlm.dir\Debug\fake_ntlm.exe.embed.manifest" /manifest fake_ntlm.dir\Debug\fake_ntlm.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"fake_ntlm.dir\Debug\fake_ntlm.exe.embed.manifest.res" fake_ntlm.dir\Debug\fake_ntlm_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\fake_ntlm.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"fake_ntlm.dir\Debug\fake_ntlm.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/fake_ntlm.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/fake_ntlm.lib" /MACHINE:X86 fake_ntlm.dir\Debug\fake_ntlm.exe.embed.manifest.res
+         fake_ntlm.dir\Debug\mprintf.obj
+         fake_ntlm.dir\Debug\nonblock.obj
+         fake_ntlm.dir\Debug\strequal.obj
+         fake_ntlm.dir\Debug\strtoofft.obj
+         fake_ntlm.dir\Debug\timeval.obj
+         fake_ntlm.dir\Debug\warnless.obj
+         fake_ntlm.dir\Debug\getpart.obj
+         fake_ntlm.dir\Debug\base64.obj
+         fake_ntlm.dir\Debug\memdebug.obj
+         fake_ntlm.dir\Debug\util.obj
+         fake_ntlm.dir\Debug\fake_ntlm.obj  /machine:X86 /debug 
+         fake_ntlm.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\fake_ntlm.exe
+       FinalizeBuildStatus:
+         Deleting file "fake_ntlm.dir\Debug\Test server fake_ntlm.unsuccessfulbuild".
+         Touching "fake_ntlm.dir\Debug\Test server fake_ntlm.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\server\fake_ntlm.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.43

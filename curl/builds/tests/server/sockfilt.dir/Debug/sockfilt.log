@@ -1,0 +1,66 @@
+﻿Build started 10/15/2014 8:06:09 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\server\sockfilt.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\".
+       InitializeBuildStatus:
+         Creating "sockfilt.dir\Debug\Test server sockfilt.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/server/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\server\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D CURL_STATICLIB /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"sockfilt.dir\Debug\\" /Fd"sockfilt.dir\Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\mprintf.c ..\..\..\lib\nonblock.c ..\..\..\lib\strequal.c ..\..\..\lib\strtoofft.c ..\..\..\lib\timeval.c ..\..\..\lib\warnless.c ..\..\..\tests\server\getpart.c ..\..\..\lib\base64.c ..\..\..\lib\memdebug.c ..\..\..\tests\server\util.c ..\..\..\tests\server\sockfilt.c ..\..\..\lib\inet_pton.c
+         mprintf.c
+         nonblock.c
+         strequal.c
+         strtoofft.c
+         timeval.c
+         warnless.c
+         getpart.c
+         base64.c
+         memdebug.c
+         util.c
+         sockfilt.c
+         inet_pton.c
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"sockfilt.dir\Debug\sockfilt.exe.embed.manifest.res" sockfilt.dir\Debug\sockfilt_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\sockfilt.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"sockfilt.dir\Debug\sockfilt.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/sockfilt.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/sockfilt.lib" /MACHINE:X86 sockfilt.dir\Debug\sockfilt.exe.embed.manifest.res
+         sockfilt.dir\Debug\mprintf.obj
+         sockfilt.dir\Debug\nonblock.obj
+         sockfilt.dir\Debug\strequal.obj
+         sockfilt.dir\Debug\strtoofft.obj
+         sockfilt.dir\Debug\timeval.obj
+         sockfilt.dir\Debug\warnless.obj
+         sockfilt.dir\Debug\getpart.obj
+         sockfilt.dir\Debug\base64.obj
+         sockfilt.dir\Debug\memdebug.obj
+         sockfilt.dir\Debug\util.obj
+         sockfilt.dir\Debug\sockfilt.obj
+         sockfilt.dir\Debug\inet_pton.obj  /machine:X86 /debug 
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"sockfilt.dir\Debug\sockfilt.exe.embed.manifest" /manifest sockfilt.dir\Debug\sockfilt.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"sockfilt.dir\Debug\sockfilt.exe.embed.manifest.res" sockfilt.dir\Debug\sockfilt_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\sockfilt.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"sockfilt.dir\Debug\sockfilt.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/sockfilt.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/sockfilt.lib" /MACHINE:X86 sockfilt.dir\Debug\sockfilt.exe.embed.manifest.res
+         sockfilt.dir\Debug\mprintf.obj
+         sockfilt.dir\Debug\nonblock.obj
+         sockfilt.dir\Debug\strequal.obj
+         sockfilt.dir\Debug\strtoofft.obj
+         sockfilt.dir\Debug\timeval.obj
+         sockfilt.dir\Debug\warnless.obj
+         sockfilt.dir\Debug\getpart.obj
+         sockfilt.dir\Debug\base64.obj
+         sockfilt.dir\Debug\memdebug.obj
+         sockfilt.dir\Debug\util.obj
+         sockfilt.dir\Debug\sockfilt.obj
+         sockfilt.dir\Debug\inet_pton.obj  /machine:X86 /debug 
+         sockfilt.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\sockfilt.exe
+       FinalizeBuildStatus:
+         Deleting file "sockfilt.dir\Debug\Test server sockfilt.unsuccessfulbuild".
+         Touching "sockfilt.dir\Debug\Test server sockfilt.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\server\sockfilt.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.82

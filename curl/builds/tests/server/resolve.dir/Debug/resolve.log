@@ -1,0 +1,61 @@
+﻿Build started 10/15/2014 8:06:09 PM.
+     1>Project "C:\cygwin\home\onthree\code\curl\builds\tests\server\resolve.vcxproj" on node 4 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "resolve.dir\Debug\Test server resolve.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Building Custom Rule C:/cygwin/home/onthree/code/curl/tests/server/CMakeLists.txt
+         CMake does not need to re-run because C:\cygwin\home\onthree\code\curl\builds\tests\server\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\cygwin\home\onthree\code\curl\builds\include\curl /IC:\cygwin\home\onthree\code\curl\include /IC:\cygwin\home\onthree\code\curl\lib /IC:\cygwin\home\onthree\code\curl\builds\lib /IC:\cygwin\home\onthree\code\curl\builds\include /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D CURL_STATICLIB /D HAVE_CONFIG_H /D _WIN32_WINNT=0x0501 /D _CRT_SECURE_NO_DEPRECATE /D _CRT_NONSTDC_NO_DEPRECATE /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"resolve.dir\Debug\\" /Fd"resolve.dir\Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\lib\mprintf.c ..\..\..\lib\nonblock.c ..\..\..\lib\strequal.c ..\..\..\lib\strtoofft.c ..\..\..\lib\timeval.c ..\..\..\lib\warnless.c ..\..\..\tests\server\getpart.c ..\..\..\lib\base64.c ..\..\..\lib\memdebug.c ..\..\..\tests\server\util.c ..\..\..\tests\server\resolve.c
+         mprintf.c
+         nonblock.c
+         strequal.c
+         strtoofft.c
+         timeval.c
+         warnless.c
+         getpart.c
+         base64.c
+         memdebug.c
+         util.c
+         resolve.c
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"resolve.dir\Debug\resolve.exe.embed.manifest.res" resolve.dir\Debug\resolve_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\resolve.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"resolve.dir\Debug\resolve.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/resolve.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/resolve.lib" /MACHINE:X86 resolve.dir\Debug\resolve.exe.embed.manifest.res
+         resolve.dir\Debug\mprintf.obj
+         resolve.dir\Debug\nonblock.obj
+         resolve.dir\Debug\strequal.obj
+         resolve.dir\Debug\strtoofft.obj
+         resolve.dir\Debug\timeval.obj
+         resolve.dir\Debug\warnless.obj
+         resolve.dir\Debug\getpart.obj
+         resolve.dir\Debug\base64.obj
+         resolve.dir\Debug\memdebug.obj
+         resolve.dir\Debug\util.obj
+         resolve.dir\Debug\resolve.obj  /machine:X86 /debug 
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"resolve.dir\Debug\resolve.exe.embed.manifest" /manifest resolve.dir\Debug\resolve.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"resolve.dir\Debug\resolve.exe.embed.manifest.res" resolve.dir\Debug\resolve_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\resolve.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ws2_32.lib winmm.lib /MANIFEST /ManifestFile:"resolve.dir\Debug\resolve.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/resolve.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/cygwin/home/onthree/code/curl/builds/tests/server/Debug/resolve.lib" /MACHINE:X86 resolve.dir\Debug\resolve.exe.embed.manifest.res
+         resolve.dir\Debug\mprintf.obj
+         resolve.dir\Debug\nonblock.obj
+         resolve.dir\Debug\strequal.obj
+         resolve.dir\Debug\strtoofft.obj
+         resolve.dir\Debug\timeval.obj
+         resolve.dir\Debug\warnless.obj
+         resolve.dir\Debug\getpart.obj
+         resolve.dir\Debug\base64.obj
+         resolve.dir\Debug\memdebug.obj
+         resolve.dir\Debug\util.obj
+         resolve.dir\Debug\resolve.obj  /machine:X86 /debug 
+         resolve.vcxproj -> C:\cygwin\home\onthree\code\curl\builds\tests\server\Debug\resolve.exe
+       FinalizeBuildStatus:
+         Deleting file "resolve.dir\Debug\Test server resolve.unsuccessfulbuild".
+         Touching "resolve.dir\Debug\Test server resolve.lastbuildstate".
+     1>Done Building Project "C:\cygwin\home\onthree\code\curl\builds\tests\server\resolve.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.39
