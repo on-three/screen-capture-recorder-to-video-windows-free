@@ -100,6 +100,44 @@ CPushPinDesktop::CPushPinDesktop(HRESULT *phr, CPushSourceDesktop *pFilter)
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
 	Gdiplus::GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
 
+	HRESULT hr = D2D1CreateFactory(
+		D2D1_FACTORY_TYPE_SINGLE_THREADED,
+		&pD2DFactory_
+    );
+	if (SUCCEEDED(hr))
+	{
+		hr = DWriteCreateFactory(
+			DWRITE_FACTORY_TYPE_SHARED,
+			__uuidof(IDWriteFactory),
+			reinterpret_cast<IUnknown**>(&pDWriteFactory_)
+        );
+	}
+	if (SUCCEEDED(hr))
+	{
+		hr = pDWriteFactory_->CreateTextFormat(
+			L"Gabriola",                // Font family name.
+			NULL,                       // Font collection (NULL sets it to use the system font collection).
+			DWRITE_FONT_WEIGHT_REGULAR,
+			DWRITE_FONT_STYLE_NORMAL,
+			DWRITE_FONT_STRETCH_NORMAL,
+			72.0f,
+			L"en-us",
+			&pTextFormat_
+			);
+	}
+	// Center align (horizontally) the text.
+	if (SUCCEEDED(hr))
+	{
+		hr = pTextFormat_->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+	}
+
+	if (SUCCEEDED(hr))
+	{
+		hr = pTextFormat_->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
+	}
+
+
+
 	m_jsonrpcServer->StartListening();
 
 	m_iHwndToTrack = (HWND) read_config_setting(TEXT("hwnd_to_track"), NULL, false);
@@ -392,6 +430,45 @@ CPushPinDesktop::~CPushPinDesktop()
 
 void CPushPinDesktop::OnPaint(HDC hdc)
 {
+	int twidth = GetDeviceCaps(hdc, HORZRES);
+	int theight = GetDeviceCaps(hdc,VERTRES);
+	RECT rc;
+	rc.left=0;
+	rc.top=0;
+	rc.right=twidth;
+	rc.bottom=theight;
+	//GetClientRect(hwnd_, &rc);
+
+	//D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+
+	if (!pRT_)
+	{
+		// Create a DC render target.
+		D2D1_RENDER_TARGET_PROPERTIES props = D2D1::RenderTargetProperties(
+			D2D1_RENDER_TARGET_TYPE_DEFAULT,
+			D2D1::PixelFormat(
+				DXGI_FORMAT_B8G8R8A8_UNORM,
+				D2D1_ALPHA_MODE_IGNORE),
+			0,
+			0,
+			D2D1_RENDER_TARGET_USAGE_NONE,
+			D2D1_FEATURE_LEVEL_DEFAULT
+			);
+
+		HRESULT hr = pD2DFactory_->CreateDCRenderTarget(&props, &pRT_);
+
+		hr = pRT_->BindDC(hdc, &rc);
+
+		// Create a black brush.
+		if (SUCCEEDED(hr))
+		{
+			hr = pRT_->CreateSolidColorBrush(
+				D2D1::ColorF(D2D1::ColorF::Black),
+				&pBlackBrush_
+				);
+		}
+	}
+
 	const clock_t now = clock();
 	if(tPrev==0.0f){tPrev=now;}
 	float dt = static_cast<float>( now - tPrev ) /  CLOCKS_PER_SEC;

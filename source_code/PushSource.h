@@ -16,6 +16,9 @@
 #include "ScrollingText.h"
 #include "NicoNicoDisplay.h"
 
+#include <dwrite.h>
+#include <d2d1.h>
+
 /*
 // UNITS = 10 ^ 7  
 // UNITS / 30 = 30 fps;
@@ -126,6 +129,13 @@ protected:
 	StaticTextManager m_staticText;
 	ScrollingTextManager m_scrollingText;
 	NicoNico::DisplayManager m_nicoNicoDisplay;
+
+	IDWriteFactory* pDWriteFactory_;
+	IDWriteTextFormat* pTextFormat_;
+	ID2D1Factory* pD2DFactory_;
+	//ID2D1HwndRenderTarget* pRT_;
+	ID2D1DCRenderTarget* pRT_;
+	ID2D1SolidColorBrush* pBlackBrush_;
 
 	//CCritSec m_cSharedState;            // Protects our internal state use CAutoLock cAutoLock(m_pFilter->pStateLock()); instead
 
